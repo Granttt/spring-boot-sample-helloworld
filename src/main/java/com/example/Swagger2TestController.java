@@ -77,6 +77,18 @@ public class Swagger2TestController {
     public String deleteUser(@PathVariable String id) {
         // 处理"/users/{id}"的DELETE请求，用来删除User
         users.remove(id);
+
+
+
+
+
+    Map map = new HashMap();
+    map.put("user","/uploadImg/图片名");
+
+
+
+
+
         return "success";
     }
 }
