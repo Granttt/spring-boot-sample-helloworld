@@ -1,0 +1,117 @@
+2019-01-04 10:39:34,887 INFO (StartupInfoLogger.java:48)- Starting SpringbootRedisTests on PC201705270738 with PID 4344 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2019-01-04 10:39:34,908 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-01-04 10:39:34,909 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-01-04 10:39:48,872 INFO (StartupInfoLogger.java:57)- Started SpringbootRedisTests in 14.923 seconds (JVM running for 18.393)
+2019-01-04 10:39:49,161 INFO (SpringbootRedisTests.java:42)- forezp
+2019-01-04 10:39:49,162 INFO (SpringbootRedisTests.java:43)- 11
+2019-01-04 14:11:48,964 INFO (StartupInfoLogger.java:48)- Starting SpringbootRedisTests on PC201705270738 with PID 9828 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2019-01-04 14:11:48,966 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-01-04 14:11:48,967 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-01-04 14:12:19,530 INFO (StartupInfoLogger.java:57)- Started SpringbootRedisTests in 33.693 seconds (JVM running for 50.844)
+2019-01-04 14:31:04,241 INFO (StartupInfoLogger.java:48)- Starting SpringbootRedisTests on PC201705270738 with PID 9548 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2019-01-04 14:31:04,243 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-01-04 14:31:04,243 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-01-04 14:31:21,489 INFO (StartupInfoLogger.java:57)- Started SpringbootRedisTests in 17.908 seconds (JVM running for 20.944)
+2019-01-04 14:35:41,301 INFO (StartupInfoLogger.java:48)- Starting SpringbootRedisTests on PC201705270738 with PID 10940 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2019-01-04 14:35:41,302 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-01-04 14:35:41,302 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-01-04 15:25:28,511 INFO (StartupInfoLogger.java:48)- Starting SpringbootRedisTests on PC201705270738 with PID 3504 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2019-01-04 15:25:28,528 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-01-04 15:25:28,529 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-01-04 15:26:49,674 INFO (StartupInfoLogger.java:48)- Starting SpringbootRedisTests on PC201705270738 with PID 8064 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2019-01-04 15:26:49,675 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-01-04 15:26:49,676 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-01-04 15:27:59,127 INFO (StartupInfoLogger.java:48)- Starting SpringbootRedisTests on PC201705270738 with PID 10052 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2019-01-04 15:27:59,128 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-01-04 15:27:59,129 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-01-04 15:39:29,785 INFO (StartupInfoLogger.java:48)- Starting SpringbootRedisTests on PC201705270738 with PID 9248 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2019-01-04 15:39:29,786 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-01-04 15:39:29,787 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-01-04 15:39:47,735 INFO (StartupInfoLogger.java:57)- Started SpringbootRedisTests in 18.66 seconds (JVM running for 21.387)
+2019-01-04 15:42:03,210 INFO (StartupInfoLogger.java:48)- Starting SpringBootSampleHelloworldApplication on PC201705270738 with PID 3316 (E:\Workspaces-idea\spring-boot-sample-helloworld\target\classes started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2019-01-04 15:42:03,214 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-01-04 15:42:03,214 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-01-04 15:42:15,172 INFO (StartupInfoLogger.java:57)- Started SpringBootSampleHelloworldApplication in 12.886 seconds (JVM running for 16.935)
+2019-01-04 15:42:15,172 INFO (SpringBootSampleHelloworldApplication.java:47)- SpringBoot Start Success
+2019-01-04 15:42:59,315 DEBUG (BaseJdbcLogger.java:145)- ==>  Preparing: select * from user where id =? 
+2019-01-04 15:42:59,414 DEBUG (BaseJdbcLogger.java:145)- ==> Parameters: 24(String)
+2019-01-04 15:42:59,694 DEBUG (BaseJdbcLogger.java:145)- <==      Total: 1
+2019-01-04 15:44:09,977 DEBUG (BaseJdbcLogger.java:145)- ==>  Preparing: insert into user(name,age) values(?,?) 
+2019-01-04 15:44:09,978 DEBUG (BaseJdbcLogger.java:145)- ==> Parameters: 高希阳(String), 26(String)
+2019-01-04 15:54:35,095 INFO (StartupInfoLogger.java:48)- Starting SpringbootRedisTests on PC201705270738 with PID 5624 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2019-01-04 15:54:35,097 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-01-04 15:54:35,103 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-01-04 15:54:49,617 INFO (StartupInfoLogger.java:57)- Started SpringbootRedisTests in 15.228 seconds (JVM running for 17.885)
+2019-01-04 16:23:42,132 INFO (StartupInfoLogger.java:48)- Starting SpringbootRedisTests on PC201705270738 with PID 8520 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2019-01-04 16:23:42,133 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-01-04 16:23:42,133 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-01-04 16:24:02,132 INFO (StartupInfoLogger.java:57)- Started SpringbootRedisTests in 20.954 seconds (JVM running for 23.377)
+2019-01-04 16:25:27,148 INFO (StartupInfoLogger.java:48)- Starting SpringbootRedisTests on PC201705270738 with PID 9544 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2019-01-04 16:25:27,149 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-01-04 16:25:27,150 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-01-04 16:25:42,475 INFO (StartupInfoLogger.java:57)- Started SpringbootRedisTests in 16.423 seconds (JVM running for 19.097)
+2019-01-04 16:29:47,140 INFO (StartupInfoLogger.java:48)- Starting SpringbootRedisTests on PC201705270738 with PID 10080 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2019-01-04 16:29:47,141 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-01-04 16:29:47,143 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-01-04 16:30:02,273 INFO (StartupInfoLogger.java:57)- Started SpringbootRedisTests in 16.149 seconds (JVM running for 18.744)
+2019-01-04 16:31:26,247 INFO (StartupInfoLogger.java:48)- Starting SpringbootRedisTests on PC201705270738 with PID 7924 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2019-01-04 16:31:26,248 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-01-04 16:31:26,249 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-01-04 16:31:40,615 INFO (StartupInfoLogger.java:57)- Started SpringbootRedisTests in 15.199 seconds (JVM running for 18.04)
+2019-01-04 16:33:50,500 INFO (StartupInfoLogger.java:48)- Starting SpringbootRedisTests on PC201705270738 with PID 10480 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2019-01-04 16:33:50,501 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-01-04 16:33:50,502 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-01-04 16:34:04,690 INFO (StartupInfoLogger.java:57)- Started SpringbootRedisTests in 15.39 seconds (JVM running for 18.2)
+2019-01-04 16:38:39,750 INFO (StartupInfoLogger.java:48)- Starting SpringbootRedisTests on PC201705270738 with PID 9972 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2019-01-04 16:38:39,751 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-01-04 16:38:39,751 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-01-04 16:38:48,844 INFO (StartupInfoLogger.java:57)- Started SpringbootRedisTests in 9.642 seconds (JVM running for 10.848)
+2019-01-04 16:38:59,713 INFO (StartupInfoLogger.java:48)- Starting SpringbootRedisTests on PC201705270738 with PID 10768 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2019-01-04 16:38:59,714 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-01-04 16:38:59,715 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-01-04 16:39:11,779 INFO (StartupInfoLogger.java:57)- Started SpringbootRedisTests in 12.653 seconds (JVM running for 16.671)
+2019-01-04 16:39:54,589 INFO (StartupInfoLogger.java:48)- Starting SpringbootRedisTests on PC201705270738 with PID 8944 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2019-01-04 16:39:54,590 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-01-04 16:39:54,591 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-01-04 16:40:08,289 INFO (StartupInfoLogger.java:57)- Started SpringbootRedisTests in 14.559 seconds (JVM running for 17.287)
+2019-01-04 16:41:28,646 INFO (StartupInfoLogger.java:48)- Starting SpringbootRedisTests on PC201705270738 with PID 7404 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2019-01-04 16:41:28,647 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-01-04 16:41:28,648 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-01-04 16:41:40,496 INFO (StartupInfoLogger.java:57)- Started SpringbootRedisTests in 12.938 seconds (JVM running for 14.866)
+2019-01-04 16:41:51,684 INFO (StartupInfoLogger.java:48)- Starting SpringbootRedisTests on PC201705270738 with PID 8228 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2019-01-04 16:41:51,685 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-01-04 16:41:51,685 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-01-04 16:42:05,716 INFO (StartupInfoLogger.java:57)- Started SpringbootRedisTests in 15.069 seconds (JVM running for 18.049)
+2019-01-04 16:42:05,995 INFO (SpringbootRedisTests.java:60)- forezp
+2019-01-04 16:42:05,996 INFO (SpringbootRedisTests.java:61)- 11
+2019-01-04 16:44:50,624 INFO (StartupInfoLogger.java:48)- Starting SpringbootRedisTests on PC201705270738 with PID 10696 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2019-01-04 16:44:50,625 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-01-04 16:44:50,625 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-01-04 16:45:04,301 INFO (StartupInfoLogger.java:57)- Started SpringbootRedisTests in 14.712 seconds (JVM running for 18.309)
+2019-01-04 16:52:27,345 INFO (StartupInfoLogger.java:48)- Starting SpringbootRedisTests on PC201705270738 with PID 8532 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2019-01-04 16:52:27,347 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-01-04 16:52:27,348 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-01-04 16:52:45,685 INFO (StartupInfoLogger.java:57)- Started SpringbootRedisTests in 19.303 seconds (JVM running for 22.998)
+2019-01-04 16:53:45,653 INFO (StartupInfoLogger.java:48)- Starting SpringbootRedisTests on PC201705270738 with PID 9508 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2019-01-04 16:53:45,656 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-01-04 16:53:45,658 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-01-04 16:54:04,036 INFO (StartupInfoLogger.java:57)- Started SpringbootRedisTests in 19.335 seconds (JVM running for 23.295)
+2019-01-04 16:55:07,018 INFO (StartupInfoLogger.java:48)- Starting SpringbootRedisTests on PC201705270738 with PID 4104 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2019-01-04 16:55:07,020 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-01-04 16:55:07,021 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-01-04 16:55:25,769 INFO (StartupInfoLogger.java:57)- Started SpringbootRedisTests in 19.733 seconds (JVM running for 23.575)
+2019-01-04 16:55:59,082 INFO (SpringbootRedisTests.java:100)- User = 希阳
+2019-01-04 16:56:01,271 INFO (SpringbootRedisTests.java:100)- User = 高
+2019-01-04 16:56:01,272 INFO (SpringbootRedisTests.java:100)- User = jantent
+2019-01-04 17:24:15,554 INFO (StartupInfoLogger.java:48)- Starting SpringbootRedisTests on PC201705270738 with PID 11444 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2019-01-04 17:24:15,570 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-01-04 17:24:15,571 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-01-04 17:24:50,366 INFO (StartupInfoLogger.java:57)- Started SpringbootRedisTests in 37.189 seconds (JVM running for 44.695)
+2019-01-04 17:24:51,734 INFO (SpringbootRedisTests.java:122)- >>>>>>>>>>>>>>>list = [Person [id=1, name=张一, cityName=null, age=11, address=null, schoolId=null, school=null], Person [id=2, name=张二, cityName=null, age=22, address=null, schoolId=null, school=null], Person [id=3, name=张三, cityName=null, age=33, address=null, schoolId=null, school=null]]
+2019-01-04 17:24:51,735 INFO (SpringbootRedisTests.java:126)- person = Person [id=1, name=张一, cityName=null, age=11, address=null, schoolId=null, school=null]
+2019-01-04 17:24:51,736 INFO (SpringbootRedisTests.java:126)- person = Person [id=2, name=张二, cityName=null, age=22, address=null, schoolId=null, school=null]
+2019-01-04 17:24:51,737 INFO (SpringbootRedisTests.java:126)- person = Person [id=3, name=张三, cityName=null, age=33, address=null, schoolId=null, school=null]
+2019-01-04 17:45:38,008 INFO (StartupInfoLogger.java:48)- Starting SpringbootRedisTests on PC201705270738 with PID 8020 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2019-01-04 17:45:38,009 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-01-04 17:45:38,010 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-01-04 17:45:59,228 INFO (StartupInfoLogger.java:57)- Started SpringbootRedisTests in 22.699 seconds (JVM running for 27.835)

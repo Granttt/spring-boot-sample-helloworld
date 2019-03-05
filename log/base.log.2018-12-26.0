@@ -1,0 +1,20 @@
+2018-12-26 12:21:15,144 INFO (StartupInfoLogger.java:48)- Starting SpringBootSampleHelloworldApplicationTests on PC201705270738 with PID 3492 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2018-12-26 12:21:15,147 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2018-12-26 12:21:15,148 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-12-26 12:21:39,197 INFO (StartupInfoLogger.java:57)- Started SpringBootSampleHelloworldApplicationTests in 26.114 seconds (JVM running for 31.419)
+2018-12-26 12:31:00,139 INFO (StartupInfoLogger.java:48)- Starting SpringBootSampleHelloworldApplicationTests on PC201705270738 with PID 9176 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2018-12-26 12:31:00,161 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2018-12-26 12:31:00,162 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-12-26 12:31:21,124 INFO (StartupInfoLogger.java:57)- Started SpringBootSampleHelloworldApplicationTests in 22.558 seconds (JVM running for 25.184)
+2018-12-26 12:31:21,831 INFO (SpringBootSampleHelloworldApplicationTests.java:27)- forezp
+2018-12-26 12:31:21,832 INFO (SpringBootSampleHelloworldApplicationTests.java:28)- 11
+2018-12-26 13:40:54,122 INFO (StartupInfoLogger.java:48)- Starting SpringbootRedisTests on PC201705270738 with PID 5788 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2018-12-26 13:40:54,124 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2018-12-26 13:40:54,124 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-12-26 13:41:06,579 INFO (StartupInfoLogger.java:57)- Started SpringbootRedisTests in 13.088 seconds (JVM running for 15.65)
+2018-12-26 13:41:35,658 INFO (StartupInfoLogger.java:48)- Starting SpringbootRedisTests on PC201705270738 with PID 9088 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2018-12-26 13:41:35,658 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2018-12-26 13:41:35,659 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2018-12-26 13:41:48,040 INFO (StartupInfoLogger.java:57)- Started SpringbootRedisTests in 13.247 seconds (JVM running for 15.59)
+2018-12-26 13:41:48,233 INFO (SpringbootRedisTests.java:42)- forezp
+2018-12-26 13:41:48,234 INFO (SpringbootRedisTests.java:43)- 11

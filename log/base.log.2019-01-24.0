@@ -1,0 +1,14 @@
+2019-01-24 16:29:04,715 INFO (StartupInfoLogger.java:48)- Starting SpringBootSampleHelloworldApplication on PC201705270738 with PID 6692 (E:\Workspaces-idea\spring-boot-sample-helloworld\target\classes started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2019-01-24 16:29:04,740 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-01-24 16:29:04,740 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-01-24 16:29:23,219 INFO (RedisConfig.java:106)- JedisPool注入成功！
+2019-01-24 16:29:23,219 INFO (RedisConfig.java:107)- redis地址：localhost:6379
+2019-01-24 16:29:27,191 INFO (StartupInfoLogger.java:57)- Started SpringBootSampleHelloworldApplication in 23.839 seconds (JVM running for 34.553)
+2019-01-24 16:29:27,192 INFO (SpringBootSampleHelloworldApplication.java:47)- SpringBoot Start Success
+2019-01-24 18:17:00,926 INFO (StartupInfoLogger.java:48)- Starting SpringBootSampleHelloworldApplication on PC201705270738 with PID 11244 (E:\Workspaces-idea\spring-boot-sample-helloworld\target\classes started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
+2019-01-24 18:17:00,931 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-01-24 18:17:00,932 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-01-24 18:17:15,277 INFO (RedisConfig.java:117)- JedisPool注入成功！
+2019-01-24 18:17:15,278 INFO (RedisConfig.java:118)- redis地址：localhost:6379
+2019-01-24 18:17:19,534 INFO (StartupInfoLogger.java:57)- Started SpringBootSampleHelloworldApplication in 19.091 seconds (JVM running for 22.263)
+2019-01-24 18:17:19,534 INFO (SpringBootSampleHelloworldApplication.java:47)- SpringBoot Start Success
