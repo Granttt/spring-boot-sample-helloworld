@@ -7,6 +7,8 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 
+import java.util.List;
+
 /**
  * @auther: 高希阳
  * @Date: 2018/12/27 15:14
@@ -29,7 +31,8 @@ public interface UserMapper {
     @Cacheable(key ="#p0")
     User findById(String keyRedis);
 
-
+    @Select("select * from user")
+    List<User> findUserList();
 
     @CachePut(key = "#p0")
     @Update("update user set name=#{name} where id=#{id}")

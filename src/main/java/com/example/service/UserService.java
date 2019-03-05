@@ -5,6 +5,8 @@ import com.example.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @auther: 高希阳
  * @Date: 2018/12/27 15:26
@@ -20,6 +22,10 @@ public class UserService {
     public User findById(String keyRedis){
 
         return userMapper.findById(keyRedis);
+    }
+    public List<User> findUserList(){
+
+        return userMapper.findUserList();
     }
     public int addUser(String name,String age){
 
