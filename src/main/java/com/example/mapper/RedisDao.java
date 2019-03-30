@@ -25,12 +25,13 @@ public class RedisDao {
      * 功能描述：StringRedisTemplate操作redis数据
      * @author gxy
      * @date 2018/12/26 12:32
-     * @param http://www.cnblogs.com/slowcity/p/9002660.html
+     * @param  http://www.cnblogs.com/slowcity/p/9002660.html
      * @return
      */
     public  void setKey(String key,String value){
         ValueOperations<String, String> ops = template.opsForValue();
-        ops.set(key,value,2, TimeUnit.MINUTES);//1分钟过期
+        ops.set(key,value);
+//        ops.set(key,value,2, TimeUnit.MINUTES);//设置过期时间2分钟
     }
 
     public String getValue(String key){
