@@ -8,6 +8,7 @@ import javax.jms.*;
  * @auther: 高希阳
  * @Date: 2019/1/28 15:56
  * @Description:点对点的接收端（消息消费者）
+ * https://blog.csdn.net/qq_20009015/article/details/81409346
  */
 public class PTPReceive {
     //连接账号

@@ -11,6 +11,7 @@ import javax.jms.*;
  * 使用JMS方式发送消息
  * 参考链接：https://www.cnblogs.com/zhuxiaojie/p/5564187.html
  * https://blog.csdn.net/liuyuanq123/article/details/79109218
+ * https://blog.csdn.net/qq_20009015/article/details/81409346
  */
 public class PTPSend {
     //连接账号
@@ -41,6 +42,7 @@ public class PTPSend {
             factory = new ActiveMQConnectionFactory(userName, password, brokerURL);
             //从工厂中获取一个连接
             connection = factory.createConnection();
+            connection.start();
             /**
              * 功能描述：创建一个session
              * 第一个参数：是否支持事务，如果为true。则会忽略第二个参数，被jms服务器设置为SESSION_TRANSACTED

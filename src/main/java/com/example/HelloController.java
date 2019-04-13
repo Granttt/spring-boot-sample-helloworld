@@ -2,7 +2,9 @@
  * 
  */
 package com.example;
+import com.example.domain.School;
 
+import com.example.domain.Person;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,6 +61,19 @@ public class HelloController {
     public String gril(){
 //		return content;
 //		return cupSize+age;
+
+		Person person =new Person();
+		person.setId(0);
+		person.setName("");
+		person.setCityName("");
+		person.setAge(0);
+		person.setAddress("");
+		person.setSchoolId("");
+		person.setSchool(new School());
+
+
+
     	return boy.getName();
+
     }
 }
