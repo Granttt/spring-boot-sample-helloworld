@@ -10,4 +10,5 @@ package com.designPattern.proxy.staticProxy;
  * @Version: 1.0
  */
 public interface Star {
+
 }
