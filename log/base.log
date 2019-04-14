@@ -1,32 +1,5 @@
-2019-03-01 16:42:15,311 INFO (StartupInfoLogger.java:48)- Starting SpringBootSampleHelloworldApplication on PC201705270738 with PID 8876 (E:\Workspaces-idea\spring-boot-sample-helloworld\target\classes started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
-2019-03-01 16:42:15,343 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
-2019-03-01 16:42:15,343 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
-2019-03-01 16:43:03,371 INFO (StartupInfoLogger.java:48)- Starting SpringBootSampleHelloworldApplication on PC201705270738 with PID 8364 (E:\Workspaces-idea\spring-boot-sample-helloworld\target\classes started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
-2019-03-01 16:43:03,374 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
-2019-03-01 16:43:03,374 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
-2019-03-01 16:43:08,624 INFO (RedisConfig.java:117)- JedisPool注入成功！
-2019-03-01 16:43:08,625 INFO (RedisConfig.java:118)- redis地址：localhost:6379
-2019-03-01 16:43:14,057 INFO (StartupInfoLogger.java:57)- Started SpringBootSampleHelloworldApplication in 11.033 seconds (JVM running for 13.325)
-2019-03-01 16:43:14,057 INFO (SpringBootSampleHelloworldApplication.java:47)- SpringBoot Start Success
-2019-03-01 16:43:34,015 DEBUG (HelloController.java:40)- 访问hello
-2019-03-01 16:46:18,560 INFO (StartupInfoLogger.java:48)- Starting SpringBootSampleHelloworldApplication on PC201705270738 with PID 11292 (E:\Workspaces-idea\spring-boot-sample-helloworld\target\classes started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
-2019-03-01 16:46:18,563 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
-2019-03-01 16:46:18,563 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
-2019-03-01 16:46:24,047 INFO (RedisConfig.java:117)- JedisPool注入成功！
-2019-03-01 16:46:24,048 INFO (RedisConfig.java:118)- redis地址：localhost:6379
-2019-03-01 16:46:25,734 INFO (StartupInfoLogger.java:57)- Started SpringBootSampleHelloworldApplication in 7.544 seconds (JVM running for 9.118)
-2019-03-01 16:46:25,735 INFO (SpringBootSampleHelloworldApplication.java:47)- SpringBoot Start Success
-2019-03-01 16:48:36,250 INFO (StartupInfoLogger.java:48)- Starting SpringBootSampleHelloworldApplication on PC201705270738 with PID 11652 (E:\Workspaces-idea\spring-boot-sample-helloworld\target\classes started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
-2019-03-01 16:48:36,252 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
-2019-03-01 16:48:36,252 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
-2019-03-01 16:48:41,710 INFO (RedisConfig.java:117)- JedisPool注入成功！
-2019-03-01 16:48:41,710 INFO (RedisConfig.java:118)- redis地址：localhost:6379
-2019-03-01 16:48:43,392 INFO (StartupInfoLogger.java:57)- Started SpringBootSampleHelloworldApplication in 7.597 seconds (JVM running for 9.488)
-2019-03-01 16:48:43,393 INFO (SpringBootSampleHelloworldApplication.java:47)- SpringBoot Start Success
-2019-03-01 16:53:58,213 INFO (StartupInfoLogger.java:48)- Starting SpringBootSampleHelloworldApplication on PC201705270738 with PID 5268 (E:\Workspaces-idea\spring-boot-sample-helloworld\target\classes started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
-2019-03-01 16:53:58,217 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
-2019-03-01 16:53:58,218 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
-2019-03-01 16:54:04,418 INFO (RedisConfig.java:117)- JedisPool注入成功！
-2019-03-01 16:54:04,419 INFO (RedisConfig.java:118)- redis地址：localhost:6379
-2019-03-01 16:54:06,143 INFO (StartupInfoLogger.java:57)- Started SpringBootSampleHelloworldApplication in 8.319 seconds (JVM running for 10.114)
-2019-03-01 16:54:06,144 INFO (SpringBootSampleHelloworldApplication.java:47)- SpringBoot Start Success
+2019-04-01 00:01:39,044 INFO (StartupInfoLogger.java:48)- Starting SpringBootSampleHelloworldApplication on LAPTOP-2ITKMCC2 with PID 6200 (D:\workspaces\idea\spring-boot-sample-helloworld\target\classes started by gaoxi in D:\workspaces\idea\spring-boot-sample-helloworld)
+2019-04-01 00:01:39,085 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2019-04-01 00:01:39,085 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
+2019-04-01 00:01:45,357 INFO (StartupInfoLogger.java:57)- Started SpringBootSampleHelloworldApplication in 6.71 seconds (JVM running for 8.635)
+2019-04-01 00:01:45,357 INFO (SpringBootSampleHelloworldApplication.java:49)- SpringBoot Start Success
