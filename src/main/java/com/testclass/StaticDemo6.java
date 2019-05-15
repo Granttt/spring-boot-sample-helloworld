@@ -29,7 +29,7 @@ class SA {
     }
 
     {
-        System.out.println("A 2"); // 5.此处开始new对象（非静态相关）
+        System.out.println("A 2"); // 5.此处开始new对象（非静态相关）,非静态比构造方法先调用，与代码顺序无关
         d = new D();// 6.顺序执行
     }
 }
