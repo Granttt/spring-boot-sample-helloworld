@@ -10,8 +10,9 @@ import org.springframework.context.annotation.ComponentScan;
 
 //@EnableScheduling // 启用定时任务
 @SpringBootApplication
-@MapperScan("com.example.mapper")
-@ComponentScan(value="com.thread")
+@MapperScan({"com.example.mapper"}) //@MapperScan({"com.kfit.demo","com.kfit.user"})
+//@ComponentScan(value="com.thread")
+@ComponentScan(value="com") //扫描整个父类包
 @EnableCaching
 public class SpringBootSampleHelloworldApplication {
 	
