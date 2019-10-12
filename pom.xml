@@ -150,6 +150,12 @@
 			<version>5.7.0</version>
 		</dependency>
 		<!--ActiveMQ消息队列 end-->
+
+		<!--SpringSession-->
+		<dependency>
+			<groupId>org.springframework.session</groupId>
+			<artifactId>spring-session-data-redis</artifactId>
+		</dependency>
         <!--swagger2-->
         <dependency>
             <groupId>io.springfox</groupId>
@@ -161,7 +167,30 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <version>2.2.2</version>
         </dependency>
-    </dependencies>
+		<!-- https://mvnrepository.com/artifact/org.apache.ant/ant -->
+		<dependency>
+			<groupId>org.apache.ant</groupId>
+			<artifactId>ant</artifactId>
+			<version>1.10.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot</artifactId>
+			<version>2.1.7.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot</artifactId>
+			<version>2.1.7.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot</artifactId>
+			<version>1.5.7.RELEASE</version>
+		</dependency>
+
+
+	</dependencies>
 	
 
 	<build>
@@ -181,7 +210,18 @@
 	            <configuration>
 	                <testFailureIgnore>true</testFailureIgnore>            </configuration>
 	        </plugin>
-		</plugins>
+
+            <!--<plugin>-->
+				<!--&lt;!&ndash;maven-compiler-plugin插件提供编译器，编码，是否跳过测试用例，引包 等默认配置。&ndash;&gt;-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-compiler-plugin</artifactId>-->
+                <!--<configuration>-->
+                    <!--<source>7</source>-->
+					<!--&lt;!&ndash; 指明生成的目标class文件的编译版本,高于项目配置的版本；采用此编译版 &ndash;&gt;-->
+                    <!--<target>7</target>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
+        </plugins>
 	</build>
 
 

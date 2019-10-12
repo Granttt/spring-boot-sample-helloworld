@@ -3,17 +3,16 @@
  */
 package com.example;
 
-import java.util.List;
-
+import com.example.domain.Params;
+import com.example.domain.Person;
+import com.example.domain.PersonService;
+import com.example.domain.repository.PersonRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.domain.Params;
-import com.example.domain.Person;
-import com.example.domain.PersonService;
-import com.example.repository.PersonRepository;
+import java.util.List;
 
 /**
  * @Project:spring-boot-sample-helloworld

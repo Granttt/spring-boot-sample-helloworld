@@ -3,19 +3,17 @@
  */
 package com.example.domain;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.persistence.criteria.*;
-
+import com.example.domain.repository.PersonRepository;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
-import org.apache.commons.lang.StringUtils;
 
-import com.example.repository.PersonRepository;
+import javax.persistence.criteria.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Project:spring-boot-sample-helloworld  

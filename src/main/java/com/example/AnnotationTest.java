@@ -1,7 +1,7 @@
 package com.example;
 
 import com.example.domain.UserAnnotation;
-import com.example.repository.UserAnnotationFactory;
+import com.example.domain.repository.UserAnnotationFactory;
 
 /**
  * @Description: java类作用描述

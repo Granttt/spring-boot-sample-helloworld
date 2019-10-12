@@ -3,8 +3,9 @@
  */
 package com.example;
 
-import java.util.List;
-
+import com.example.domain.Person;
+import com.example.mapper.HotelDtoMapper;
+import com.example.domain.repository.PersonRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +16,7 @@ import org.springframework.data.domain.Sort.Direction;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.domain.Person;
-import com.example.mapper.HotelDtoMapper;
-import com.example.repository.PersonRepository;
+import java.util.List;
 
 /**
  * @Project:spring-boot-sample-helloworld  
@@ -64,6 +63,15 @@ public class DataController {
 		logger.debug("q3 开始");
 		logger.debug("q3接收参数name={},address={}",name,address);
 		return personRepository.withNameAndAddressQuery(name, address);
+	}
+	@RequestMapping("/q4")
+	public List<Person> q4(String name,String address){
+		logger.debug("q4 开始");
+		logger.debug("q4接收参数name={},address={}",name,address);
+		Person person = new Person();
+		person.setName(name);
+		person.setAddress(address);
+		return personRepository.withNameAndAddressQuery(person);
 	}
 	//测试mybaits
 	@RequestMapping("/q5")

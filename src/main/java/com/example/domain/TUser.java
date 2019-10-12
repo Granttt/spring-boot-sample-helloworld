@@ -15,7 +15,8 @@ import javax.persistence.Table;
 @Table(name = "t_user")
 public class TUser {
     private String id;
-    private String username;
+    @Column(name = "user_name")
+    private String userName;
     private String password;
 
     @Id
@@ -27,15 +28,15 @@ public class TUser {
     public void setId(String id) {
         this.id = id;
     }
-    @Column(name="username")
-    public String getUsername() {
-        return username;
+
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
-    @Column(name="password")
+
     public String getPassword() {
         return password;
     }

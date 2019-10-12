@@ -3,14 +3,13 @@
  */
 package com.example;
 
-import java.text.SimpleDateFormat;
-
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import lombok.extern.slf4j.Slf4j;
+import java.text.SimpleDateFormat;
 
 /**
  * @Project:spring-boot-sample-helloworld  
@@ -36,18 +35,18 @@ public class ScheduledService {
 	
 	@Scheduled(cron = "0/5 * * * * *")
     public void scheduled(){
-        log.info("=====>>>>>使用cron  {}",dateformat.format(System.currentTimeMillis()));
+//        log.info("=====>>>>>使用cron  {}",dateformat.format(System.currentTimeMillis()));
     }
     @Scheduled(fixedRate = 5000)//上一次开始执行时间点之后5秒再执行
     public void scheduled1() {
-        log.info("=====>>>>>使用fixedRate  {}", dateformat.format(System.currentTimeMillis()));
+//        log.info("=====>>>>>使用fixedRate  {}", dateformat.format(System.currentTimeMillis()));
     }
     @Scheduled(fixedDelay = 5000)//上一次执行完毕时间点之后5秒再执行
     public void scheduled2() {
-        log.info("=====>>>>>fixedDelay  {}",dateformat.format(System.currentTimeMillis()));
+//        log.info("=====>>>>>fixedDelay  {}",dateformat.format(System.currentTimeMillis()));
     }
     @Scheduled(initialDelay=1000, fixedRate=6000)//第一次延迟1秒后执行，之后按fixedRate的规则每5秒执行一次
     public void scheduled3() {
-    	log.info("=====>>>>>initialDelay  {}",dateformat.format(System.currentTimeMillis()));
+//    	log.info("=====>>>>>initialDelay  {}",dateformat.format(System.currentTimeMillis()));
     }
 }

@@ -3,9 +3,11 @@
  */
 package com.example.mapper;
 
-import java.util.List;
-
 import com.example.domain.Person;
+import com.example.domain.repository.TargetDataSource;
+import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * @Project:spring-boot-sample-helloworld  
@@ -15,8 +17,12 @@ import com.example.domain.Person;
  * @version 1.0.0 
  * @Description: 
  */
+@Mapper
 public interface HotelDtoMapper {
 	
 	public List<Person> findByName(String country);
+
+	@TargetDataSource("ds2")
+	public List<Person> findListDs2();
 
 }

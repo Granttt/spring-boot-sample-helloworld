@@ -11,7 +11,8 @@ import org.springframework.stereotype.Component;
  * @Class:BoyInfo 
  * @author 高希阳
  * @date 2017-10-23 下午6:00:02   
- * @version 1.0.0 
+ * @version 1.0.0
+ * https://www.e-learn.cn/content/qita/1550535
  */
 @Component  //注入实体bean的注解
 @ConfigurationProperties(prefix="boy")//获取前缀为boy的属性

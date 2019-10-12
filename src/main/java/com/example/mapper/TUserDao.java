@@ -6,6 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * @Description: java类作用描述
  * @Author: gaoxi
@@ -30,10 +32,10 @@ public interface TUserDao extends JpaRepository<TUser,String> {
      * https://blog.csdn.net/ming070423/article/details/22086169
      */
 //    @Query(value = "select u.id from t_user u where u.username = #{username} and password = #{password}")
-    @Query(value = "select u.id from TUser u where u.username = :#{#user.username} and u.password = :#{#user.password}")
-    String findByUsernameAndPassword(@Param("user") TUser user);
+    @Query(value = "select u from TUser u where u.userName = :#{#user.userName} and u.password = :#{#user.password}")
+    List<TUser> findByUserNameAndPassword(@Param("user")TUser user);
 
-    @Query(value = "select u.id from t_user u where u.username = ?1 and u.password = ?2",nativeQuery = true)
+    @Query(value = "select u.id from t_user u where u.userName = ?1 and u.password = ?2",nativeQuery = true)
     String findByUsernameAndPassword(String username,String password);
 
 
@@ -43,7 +45,7 @@ public interface TUserDao extends JpaRepository<TUser,String> {
     //jpa 示范
 //    @Query("select u from User u where u.age = ?#{[0]}")
 //    List<User> findUsersByAge(int age);
-//
+//   https://spring.io/blog/2014/07/15/spel-support-in-spring-data-jpa-query-definitions
 //    @Query("select u from User u where u.firstname = :#{#customer.firstname}")
 //    List<User> findUsersByCustomersFirstname(@Param("customer") Customer customer);
 

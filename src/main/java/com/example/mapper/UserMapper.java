@@ -1,5 +1,6 @@
 package com.example.mapper;
 
+import com.example.domain.Person;
 import com.example.domain.User;
 import org.apache.ibatis.annotations.*;
 import org.springframework.cache.annotation.CacheConfig;
@@ -45,4 +46,13 @@ public interface UserMapper {
     @Delete("delete from user where id=#{id}")
     void deleteById(String keyRedis);
 
+    /*
+     * 这张表示复制的主库到test的，在test1中数据不同.
+     * 需要自己自己进行复制，不然会报错：Table 'test1.demo1' doesn't exist
+     */
+    @Select("select * from user_1")
+    List<User> getListByDs1();
+
+    @Select("select * from person")
+    List<Person> getListByDs2();
 }

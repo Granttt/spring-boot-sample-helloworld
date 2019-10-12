@@ -23,4 +23,14 @@
     	from Person c 
     	where c.name = #{country}
     </select>
+    <select id="findListDs2" resultMap="ListHotelDto">
+        select
+    		c.id,
+    		c.name,
+    		c.name as cityName,
+    		c.age,
+    		c.address,
+    		c.school_id
+    	from Person c
+    </select>
 </mapper>

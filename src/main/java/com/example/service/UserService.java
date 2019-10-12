@@ -1,6 +1,8 @@
 package com.example.service;
 
+import com.example.domain.Person;
 import com.example.domain.User;
+import com.example.domain.repository.TargetDataSource;
 import com.example.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +29,14 @@ public class UserService {
 
         return userMapper.findUserList();
     }
+    /**
+     * 指定数据源
+     * @return
+     */
+    @TargetDataSource("ds1")
+    public List<User> getListByDs1(){
+        return userMapper.getListByDs1();
+    }
     public int addUser(String name,String age){
 
         return userMapper.addUser(name,age);
@@ -41,5 +51,19 @@ public class UserService {
 
         userMapper.deleteById(keyRedis);
 
+    }
+
+    /**
+     * 指定数据源
+     * @return
+     */
+    @TargetDataSource("ds2")
+    public List<Person> getListByDs2() {
+        return userMapper.getListByDs2();
+    }
+
+    @TargetDataSource("ds3")
+    public List<Person> getListByDs3() {
+        return userMapper.getListByDs2();
     }
 }

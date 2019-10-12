@@ -20,6 +20,9 @@ public class ServiceMain {
             DubboService dubboService = iteratorSpi.next();
             dubboService.sayHello();;
         }
+        for (DubboService dubboService : spiLoader) {
+            dubboService.sayHello();
+        }
 
     }
 }

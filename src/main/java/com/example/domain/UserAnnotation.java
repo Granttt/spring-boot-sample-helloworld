@@ -1,6 +1,6 @@
 package com.example.domain;
 
-import com.example.repository.Init;
+import com.example.domain.repository.Init;
 
 /**
  * @Description: java类作用描述

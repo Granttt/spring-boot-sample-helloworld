@@ -2,7 +2,7 @@ package com.example;
 
 import com.example.domain.TUser;
 import com.example.mapper.TUserDao;
-import com.example.repository.Result;
+import com.example.domain.repository.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -45,7 +46,7 @@ public class TUserController {
     public String save(String username,String password){
         TUser tUser = new TUser();
         tUser.setId(UUID.randomUUID().toString());
-        tUser.setUsername(username);
+        tUser.setUserName(username);
         tUser.setPassword(password);
         tUserDao.save(tUser);
         return "login";
@@ -63,7 +64,8 @@ public class TUserController {
         result.setSuccess(false);
         result.setDetail(null);
         try {
-            String userId = tUserDao.findByUsernameAndPassword(user);
+            List<TUser> list = tUserDao.findByUserNameAndPassword(user);
+            String userId = list.get(0).getId();
 //            String userId =tUserDao.findByUsernameAndPassword(user.getUsername(),user.getPassword());
             if(userId == null){
                 result.setMsg("用户名或密码错误");
