@@ -210,6 +210,14 @@
 	            <configuration>
 	                <testFailureIgnore>true</testFailureIgnore>            </configuration>
 	        </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
 
             <!--<plugin>-->
 				<!--&lt;!&ndash;maven-compiler-plugin插件提供编译器，编码，是否跳过测试用例，引包 等默认配置。&ndash;&gt;-->

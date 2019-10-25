@@ -1,4 +1,4 @@
-package com.example.repository;
+package com.example.domain.repository;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;

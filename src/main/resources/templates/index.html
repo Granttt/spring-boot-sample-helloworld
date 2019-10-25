@@ -35,13 +35,25 @@
 	<br>
 	简单遍历：
 	<table border="1">
+		<tr>
+			<td>姓名</td>
+			<td>年龄</td>
+		</tr>
 		<tr th:each="m : ${list1}"><!-- 其中m是个临时变量，像for(User u : userList)那样中的u-->
 			<td th:text="${m.name}"/>
 			<td th:text="${m.age}"/>
 		</tr>
+		<input type="button" onclick="showname()" >
 	</table>
 	
   </body>
+  <script th:inline="javaScript">
+	  //在js中获取model中的数据
+	function showname() {
+		var name = [[${yu}]]
+		alert(name)
+	}
+  </script>
   <script type="text/javascript">
   var a = 99;            // 全局变量a
 	f();                   // f是函数，虽然定义在调用的后面，但是函数声明会提升到作用域的顶部。 

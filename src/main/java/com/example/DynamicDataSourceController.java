@@ -44,4 +44,13 @@ public class DynamicDataSourceController {
     public List<Person> q8(){
         return userService.getListByDs3();
     }
+
+    /**
+     * 分布式事务测试
+     * https://blog.csdn.net/Coder_Qiang/article/details/80205784
+     */
+    @RequestMapping("/q9")
+    public void insertBack(){
+         userService.insertBack();
+    }
 }

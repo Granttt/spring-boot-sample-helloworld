@@ -6,6 +6,7 @@ import com.example.domain.repository.TargetDataSource;
 import com.example.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -65,5 +66,19 @@ public class UserService {
     @TargetDataSource("ds3")
     public List<Person> getListByDs3() {
         return userMapper.getListByDs2();
+    }
+
+    /**
+     * 方法上加@Transactional，声明一个事物
+     */
+    @TargetDataSource("ds2")
+    @Transactional(rollbackFor = Exception.class)
+    public void insertBack() {
+        User user = new User();
+        user.setId("3");
+        user.setAge("11");
+        user.setName("hsfsf");
+        userMapper.insertUser(user);
+        throw new RuntimeException();
     }
 }

@@ -1,4 +1,4 @@
-package com.example.repository;
+package com.example.domain.repository;
 
 /**
  * @Description: java类作用描述

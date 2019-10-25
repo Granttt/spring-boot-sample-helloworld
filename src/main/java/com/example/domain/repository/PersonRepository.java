@@ -1,18 +1,16 @@
 /**
  * 
  */
-package com.example.repository;
+package com.example.domain.repository;
 
-import java.util.List;
-
+import com.example.domain.Person;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.example.domain.Params;
-import com.example.domain.Person;
+import java.util.List;
 
 /**
  * @Project:spring-boot-sample-helloworld  
@@ -45,4 +43,6 @@ public interface PersonRepository extends JpaRepository<Person, Integer> {
 	@Query("select p from Person p inner join p.school where p.schoolId =:sclId")
 	public List<Person> findPersonList(@Param("sclId")String Name);
 
+	@Query("select p from Person p where p.name = :#{#person.name} and p.address = :#{#person.address}")
+	List<Person> withNameAndAddressQuery(@Param("person")Person person);
 }

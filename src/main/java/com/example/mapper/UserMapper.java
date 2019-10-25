@@ -55,4 +55,8 @@ public interface UserMapper {
 
     @Select("select * from person")
     List<Person> getListByDs2();
+
+
+    @Insert("insert into user(id,name,age) values(#{id},#{name},#{age})")
+    void insertUser(User user);
 }
