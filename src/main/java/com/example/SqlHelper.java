@@ -17,27 +17,30 @@ import java.util.Date;
 public class SqlHelper {
     //基本数据配置
     private String packageOutPath = "com.activities";// 指定实体生成所在包的路径
-    private String authorName = "act_ambry";// 作者名字
-    private String tablename = "act_ambry";// 表名
+    private String authorName = "gxy";// 作者名字
+    private String tablename = "act_period_ambry";// 表名
     private String[] colnames; // 列名数组
     private static String[] comments;  //列名注释,gxy自定义添加
     private String[] colTypes; // 列名类型数组
     private String version = "V0.01"; // 版本
     private int[] colSizes; // 列名大小数组
-    private boolean f_util = false; // 是否需要导入包java.util.*
+    private boolean f_util = true; // 是否需要导入包java.util.*
     private boolean f_sql = false; // 是否需要导入包java.sql.*
     private boolean f_lang = false; // 是否需要导入包java.sql.*
+    private boolean f_io = false; // 是否需要导入包java.io.Serializable
     private String defaultPath = "/src/main/java/";
     // 数据库连接
-    private static final String URL = "jdbc:mysql://localhost:3306/activities?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false";
+    private static final String URL = "jdbc:mysql://10.0.10.230:3306/zdd_api?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false";
     private static final String NAME = "root";
-    private static final String PASS = "159357";
+    private static final String PASS = "Xltdb@2019!";
     private static final String DRIVER = "com.mysql.jdbc.Driver";
 
     /*
      * 构造函数
+     * tablename需要生成的数据库表名
      */
-    public SqlHelper() {
+    public SqlHelper(String tablename) {
+        this.tablename = tablename;
         // 创建连接
         Connection con;
         // 查要生成实体类的表
@@ -65,9 +68,9 @@ public class SqlHelper {
                 //自动生成包配置
 
 
-                // if (colTypes[i].equalsIgnoreCase("datetime")) {
-                // f_util = true;
-                // }
+                 if (colTypes[i].equalsIgnoreCase("datetime")) {
+                 f_util = true;
+                 }
                 if (colTypes[i].equalsIgnoreCase("image") || colTypes[i].equalsIgnoreCase("text")
                         || colTypes[i].equalsIgnoreCase("datetime") || colTypes[i].equalsIgnoreCase("time")
                         || colTypes[i].equalsIgnoreCase("date") || colTypes[i].equalsIgnoreCase("datetime2")) {
@@ -136,20 +139,27 @@ public class SqlHelper {
         if (f_lang) {
             sb.append("import java.lang.*;\r\n");
         }
+        if (f_io) {
+            sb.append("import java.io.Serializable;\r\n");
+        }
         sb.append("import lombok.Data;\r\n");
 
         sb.append("\r\n");
         // 注释部分
-        sb.append("   /**\r\n");
-        sb.append("    * @文件名称：" + initcap(underlineToHump(this.tablename)) + ".java\r\n");
-        sb.append("    * @创建时间：" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()) + "\r\n");
-        sb.append("    * @创  建  人：" + this.authorName + " \r\n");
-        sb.append("    * @文件描述：" + tablename + " 实体类\r\n");
-        sb.append("    * @文件版本：" + this.version + " \r\n");
-        sb.append("    */ \r\n");
-        sb.append("\n\r\n@Data");
+        sb.append("/**\r\n");
+        sb.append(" * @文件名称：" + initcap(underlineToHump(this.tablename)) + ".java\r\n");
+        sb.append(" * @创建时间：" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()) + "\r\n");
+        sb.append(" * @创  建  人：" + this.authorName + " \r\n");
+        sb.append(" * @文件描述：" + tablename + " 实体类\r\n");
+        sb.append(" * @文件版本：" + this.version + " \r\n");
+        sb.append(" */");
+        sb.append("\r@Data");
         // 实体部分
-        sb.append("\npublic class " + initcap(underlineToHump(tablename)) + "{\r\n");
+        sb.append("\npublic class " + initcap(underlineToHump(tablename)));
+        if (f_io) {
+            sb.append(" implements Serializable ");
+        }
+        sb.append( "{\r\n");
         processAllAttrs(sb);// 属性
 //        processAllMethod(sb);// get set方法
         sb.append("}\r\n");
@@ -289,7 +299,7 @@ public class SqlHelper {
      */
     public static void main(String[] args) {
 
-        new SqlHelper();
+        new SqlHelper("signin_lottery_record");
 
     }
 }

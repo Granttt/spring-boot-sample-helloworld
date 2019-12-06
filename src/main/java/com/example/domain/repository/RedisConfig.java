@@ -24,6 +24,7 @@ import redis.clients.jedis.JedisPoolConfig;
  * @Date: 2018/12/27 15:00
  * @Description:Redis缓存配置类
  * http://note.youdao.com/noteshare?id=31b68c9e157092ef2fddfe2513c0e435&sub=0B32FC8E708943A88F16676E127AC9FB
+ * https://www.cnblogs.com/gdpuzxs/p/7222309.html
  * SpringBoot 使用 Redis 缓存(1)
  *
  * 崛起于Springboot2.X之Jedis+Redis单机(15)-1
@@ -122,6 +123,7 @@ public class RedisConfig extends CachingConfigurerSupport {
      * 选择redis作为默认缓存工具
      * @param redisTemplate
      * @return
+     * https://www.cnblogs.com/superfj/p/9232482.html
      */
     @Bean
     public CacheManager cacheManager(RedisTemplate redisTemplate) {

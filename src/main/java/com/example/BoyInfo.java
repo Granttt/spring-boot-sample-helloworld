@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  * @version 1.0.0
  * https://www.e-learn.cn/content/qita/1550535
  */
-@Component  //注入实体bean的注解
+@Component  //注入实体bean的注解,把普通pojo实例化到spring容器中，相当于配置文件中的<bean id="" class=""/>）
 @ConfigurationProperties(prefix="boy")//获取前缀为boy的属性
 public class BoyInfo {
 	private String name;

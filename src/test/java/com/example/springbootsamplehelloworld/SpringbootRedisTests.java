@@ -1,5 +1,6 @@
 package com.example.springbootsamplehelloworld;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.example.domain.Person;
 import com.example.domain.User;
@@ -36,6 +37,10 @@ public class SpringbootRedisTests {
     private RedisTemplate redisTemplate;
     @Autowired
     private ListOperations<String, Object> listOperations;
+    /**
+     * jedis测试
+     * -4
+     */
     @Autowired
     private ICacheService iCacheService;
 
@@ -101,7 +106,7 @@ public class SpringbootRedisTests {
         // pop之后 值会消失
 //        System.out.println(listOperations.leftPop("list:user"));
 
-        //取出
+        //取出,获取列表指定范围内的元素range(start开始位置, 0是开始位置，end 结束位置, -1返回所有)
         List<User> oowwoo = redisTemplate.opsForList().range("ooo:user", 0, -1);
 //        Iterator<User> it = oowwoo.iterator();
 //        while (it.hasNext()) {
@@ -202,6 +207,14 @@ public class SpringbootRedisTests {
         String result = iCacheService.get("redis_list_test");
         List<String> list = json.parseArray(result, String.class);
         System.out.println(list);
+    }
+    /**
+     * 获取Object
+     */
+    @Test
+    public void getObject() {
+        Object result = iCacheService.get("redis_obj_test");
+        JSONObject.toJavaObject((JSON) result,Person.class);
     }
     @Test
     public void remove() {

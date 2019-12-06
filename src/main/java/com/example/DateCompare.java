@@ -1,5 +1,8 @@
 package com.example;
 
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.time.DateUtils;
+
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -17,6 +20,7 @@ import java.util.Date;
 public class DateCompare {
     public static void main(String[] args) throws ParseException {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat ds = new SimpleDateFormat("yyyy-MM-dd ");
 
         String beginTime=new String("2017-06-09 10:22:22");
         String endTime=new String("2017-05-08 11:22:22");
@@ -42,6 +46,45 @@ public class DateCompare {
         Date oldDate1 = df.parse("2011-05-12 15:16:00"); //这里时间可以自己定
         Date oldDate2 = df.parse("2011-05-12 15:16:00"); //这里时间可以自己定
         System.out.println(oldDate1.compareTo(oldDate2)); //判断,如果时间在这时间后,就执行后面操作
+        System.out.println(DateCompare.getCurrentTimeMillis());
+        System.out.println("=====================================================================");
+        String begin=new String("10:22:22");
+        Date startTime = df.parse(ds.format(new Date()) + begin);
+        System.out.println(startTime);//date
+        System.out.println(df.format(startTime));//string
 
+        System.out.println("============日期处理类 org.apache.commons.lang3.time.DateUtils==============");
+        //https://blog.csdn.net/yihaoawang/article/details/50638199
+        //https://www.cnblogs.com/aston/p/9053201.html
+        System.out.println(df.format(DateUtils.addDays(new Date(),30)));
+        System.out.println(df.format(DateUtils.addMonths(new Date(),1)));
+        System.out.println(df.format(DateUtils.addYears(new Date(),-1)));
     }
+    /**
+     * 获取当前时间,默认 24小时制 HH:mm:ss
+     *
+     * @return
+     */
+    public static Date getCurrentTimeMillis() throws ParseException {
+        Date nowTime = new Date(System.currentTimeMillis());
+        SimpleDateFormat sdFormatter = new SimpleDateFormat("HH:mm:ss");
+        String retStrFormatNowDate = sdFormatter.format(nowTime);
+        Date date = sdFormatter.parse(retStrFormatNowDate);
+        return date;
+    }
+    /**
+     * 把时间化为秒 HH:MM:SS
+     */
+    public static int DateToSecond(Date obj) {
+        if (obj == null)
+            return 0;
+        String date = obj.toString().trim();
+        if (StringUtils.isEmpty(date))
+            return 0;
+        int hour = Integer.valueOf(date.split(":")[0]);
+        int minute = Integer.valueOf(date.split(":")[1]);
+        int second = Integer.valueOf(date.split(":")[2]);
+        return hour * 60 * 60 + minute * 60 + second;
+    }
+
 }

@@ -24,25 +24,25 @@ import javax.validation.Valid;
 @RestController
 public class TestPerson {
 
-	//绑定PersonalValidator  
-	@InitBinder  
-	public void initBinder(WebDataBinder webDataBinder){  
-	    webDataBinder.addValidators(new PersonalValidto());  
-	}  
-	
-	@RequestMapping(value = "testPersonalValidtor.do")  
-	@ResponseBody  
-	//直接返回对象  
-	public Object testPersonalValidtor(@Valid BoyInfo personScope, BindingResult bindingResult){  
-	    if(bindingResult.hasErrors()){  
-	        StringBuffer sb = new StringBuffer();  
-	        for(ObjectError objectError : bindingResult.getAllErrors()){  
-	            sb.append(((FieldError)objectError).getField() +" : ").append(objectError.getDefaultMessage());  
-	        }  
-	        return sb.toString();  
-	    }else{  
-	        return personScope;  
-	    }  
+	//绑定PersonalValidator
+	@InitBinder
+	public void initBinder(WebDataBinder webDataBinder){
+	    webDataBinder.addValidators(new PersonalValidto());
+	}
+
+	//直接返回对象
+	@RequestMapping(value = "testPersonalValidtor.do")
+	@ResponseBody
+	public Object testPersonalValidtor(@Valid BoyInfo personScope, BindingResult bindingResult){
+	    if(bindingResult.hasErrors()){
+	        StringBuffer sb = new StringBuffer();
+	        for(ObjectError objectError : bindingResult.getAllErrors()){
+	            sb.append(((FieldError)objectError).getField() +" : ").append(objectError.getDefaultMessage());
+	        }
+	        return sb.toString();
+	    }else{
+	        return personScope;
+	    }
 	}
 
 	public static void main(String[] args) {
