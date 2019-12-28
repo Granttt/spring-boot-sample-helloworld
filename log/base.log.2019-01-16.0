@@ -1,8 +1,0 @@
-2019-01-16 11:03:43,141 INFO (StartupInfoLogger.java:48)- Starting SpringbootRedisTests on PC201705270738 with PID 8156 (started by Administrator in E:\Workspaces-idea\spring-boot-sample-helloworld)
-2019-01-16 11:03:43,145 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
-2019-01-16 11:03:43,146 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
-2019-01-16 11:04:01,111 INFO (StartupInfoLogger.java:57)- Started SpringbootRedisTests in 19.046 seconds (JVM running for 23.968)
-2019-01-16 11:04:02,057 INFO (SpringbootRedisTests.java:123)- >>>>>>>>>>>>>>>list = [Person [id=1, name=张一, cityName=null, age=11, address=null, schoolId=null, school=null], Person [id=2, name=张二, cityName=null, age=22, address=null, schoolId=null, school=null], Person [id=3, name=张三, cityName=null, age=33, address=null, schoolId=null, school=null]]
-2019-01-16 11:04:02,058 INFO (SpringbootRedisTests.java:127)- person = Person [id=1, name=张一, cityName=null, age=11, address=null, schoolId=null, school=null]
-2019-01-16 11:04:02,059 INFO (SpringbootRedisTests.java:127)- person = Person [id=2, name=张二, cityName=null, age=22, address=null, schoolId=null, school=null]
-2019-01-16 11:04:02,059 INFO (SpringbootRedisTests.java:127)- person = Person [id=3, name=张三, cityName=null, age=33, address=null, schoolId=null, school=null]

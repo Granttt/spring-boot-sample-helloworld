@@ -1,5 +1,0 @@
-2019-04-01 00:01:39,044 INFO (StartupInfoLogger.java:48)- Starting SpringBootSampleHelloworldApplication on LAPTOP-2ITKMCC2 with PID 6200 (D:\workspaces\idea\spring-boot-sample-helloworld\target\classes started by gaoxi in D:\workspaces\idea\spring-boot-sample-helloworld)
-2019-04-01 00:01:39,085 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
-2019-04-01 00:01:39,085 INFO (SpringApplication.java:593)- No active profile set, falling back to default profiles: default
-2019-04-01 00:01:45,357 INFO (StartupInfoLogger.java:57)- Started SpringBootSampleHelloworldApplication in 6.71 seconds (JVM running for 8.635)
-2019-04-01 00:01:45,357 INFO (SpringBootSampleHelloworldApplication.java:49)- SpringBoot Start Success
