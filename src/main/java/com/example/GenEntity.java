@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * @Author: gaoxi
  * @CreateDate: 2019/10/22 20:24
- * @Description:MySQL表自动生成Java实体类
+ * @Description:MySQL表自动生成Java实体类(全部表)
  * https://blog.csdn.net/scyxm0426/article/details/80805029
  */
 public class GenEntity {

@@ -2,6 +2,7 @@ package com.example.questions;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -21,7 +22,7 @@ public class Question05 {
         list. add("☞精◈彩◈猿◈笔◈记☜");
         list. add("的博客");
         /**
-         * 如果没有括号中的new String[0]会报错
+         * 如果没有括号中的new String[0] 会报错
          * [Ljava.lang.Object; cannot be cast to [Ljava.lang.String;
          * 参考：https://blog.csdn.net/linke1183982890/article/details/82756692
          */
@@ -31,5 +32,19 @@ public class Question05 {
         String[] array = new String[]{"☞精◈彩◈猿◈笔◈记☜","的博客"};
         List<String> listArray = Arrays.asList(array);
         System.out.println(listArray.get(1));
+
+        /**
+         * 用 Collections.reverse 反转一个 List
+         * https://www.cnblogs.com/ywb2018/p/9922829.html
+         */
+        List<String> list2 = new ArrayList<String>();
+        list2.add( "11" );
+        list2.add( "12" );
+        list2.add( "13" );
+        System.out.println(list2);
+
+        // 反转 list
+        Collections.reverse( list2 );
+        System.out.println("反转 list:"+list2);
     }
 }

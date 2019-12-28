@@ -30,9 +30,9 @@ public class SqlHelper {
     private boolean f_io = false; // 是否需要导入包java.io.Serializable
     private String defaultPath = "/src/main/java/";
     // 数据库连接
-    private static final String URL = "jdbc:mysql://10.0.10.230:3306/zdd_api?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false";
+    private static final String URL = "jdbc:mysql://101.254.136.114:13306/zdd_api?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false";
     private static final String NAME = "root";
-    private static final String PASS = "Xltdb@2019!";
+    private static final String PASS = "Xlttidb@2019!";
     private static final String DRIVER = "com.mysql.jdbc.Driver";
 
     /*
@@ -299,7 +299,7 @@ public class SqlHelper {
      */
     public static void main(String[] args) {
 
-        new SqlHelper("signin_lottery_record");
+        new SqlHelper("system_setting");
 
     }
 }

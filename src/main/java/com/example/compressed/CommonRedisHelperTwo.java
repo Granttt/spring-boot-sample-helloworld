@@ -19,7 +19,7 @@ import java.util.Collections;
 @Component
 public class CommonRedisHelperTwo {
     private static final Long SUCCESS = 1L;
-    @Resource
+
     private static RedisTemplate<String, Object> redisTemplate;
 
     /**
@@ -68,4 +68,12 @@ public class CommonRedisHelperTwo {
         return false;
     }
 
+    public  RedisTemplate<String, Object> getRedisTemplate() {
+        return redisTemplate;
+    }
+
+    @Resource(name = "redisTemplate")
+    public void setRedisTemplate(RedisTemplate<String, Object> redisTemplate) {
+        CommonRedisHelperTwo.redisTemplate = redisTemplate;
+    }
 }

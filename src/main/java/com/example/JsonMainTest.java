@@ -43,14 +43,15 @@ public class JsonMainTest {
         out1.setPid(2);
         goods.add(out1);
         TaskProductOut out2 =new TaskProductOut();
-        out2.setKid(1);
-        out2.setPid(2);
+        out2.setKid(3);
+        out2.setPid(4);
         goods.add(out2);
         TaskProductOut out3 =new TaskProductOut();
-        out3.setKid(1);
-        out3.setPid(2);
+        out3.setKid(5);
+        out3.setPid(6);
         goods.add(out3);
         System.out.println(JSON.toJSONString(goods));
+
 
     }
 @Data

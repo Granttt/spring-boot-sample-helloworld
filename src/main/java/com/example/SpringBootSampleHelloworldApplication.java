@@ -27,7 +27,7 @@ public class SpringBootSampleHelloworldApplication {
 	
 	protected static Logger logger=LoggerFactory.getLogger(SpringBootSampleHelloworldApplication.class);
 	/*
-	如果不启用多数据源，则无需一下配置，仍然在application.properties中配置mybatis.mapper-locations即可生效
+	如果不启用多数据源，则无需以下配置，仍然在application.properties中配置mybatis.mapper-locations即可生效
 	如果配置了多数据源，但sql采用注解的方式，也无需以下配置。sql注解的方式包括：@Select， @Insert等。只要在类上添加@Mapper注解即可，容器加载会识别为mapper对象
 	如果配置多数据源且采用xml的sql书写方式，则在application.properties中配置mybatis.mapper-locations不再生效，可以在定义SqlSessionFactory的时候
 	，加上如下配置：

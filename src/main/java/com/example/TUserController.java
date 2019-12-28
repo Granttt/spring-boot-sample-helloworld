@@ -1,8 +1,9 @@
 package com.example;
 
 import com.example.domain.TUser;
-import com.example.mapper.TUserDao;
+import com.example.domain.repository.Auth;
 import com.example.domain.repository.Result;
+import com.example.mapper.TUserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +19,7 @@ import java.util.UUID;
  * @Author: gaoxi
  * @CreateDate: 2019/6/10 23:34
  * @Version: 1.0
- * https://www.cnblogs.com/shyf/p/9851025.html(没有登录方法。登了方法自己写的)
+ * https://www.cnblogs.com/shyf/p/9851025.html(没有登录方法。登录方法自己写的)
  */
 @Controller
 @RequestMapping("/tuser")
@@ -82,4 +83,12 @@ public class TUserController {
         return result;
     }
 
+
+    @Auth
+    @GetMapping(value = "/username")
+    @ResponseBody
+    public String getLoginUserName(String userName, Integer age) {
+
+        return userName + " --- " + age;
+    }
 }
