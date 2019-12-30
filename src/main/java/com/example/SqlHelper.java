@@ -26,7 +26,7 @@ public class SqlHelper {
     private int[] colSizes; // 列名大小数组
     private boolean f_util = true; // 是否需要导入包java.util.*
     private boolean f_sql = false; // 是否需要导入包java.sql.*
-    private boolean f_lang = false; // 是否需要导入包java.sql.*
+    private boolean f_lang = false; // 是否需要导入包java.lang.*
     private boolean f_io = false; // 是否需要导入包java.io.Serializable
     private String defaultPath = "/src/main/java/";
     // 数据库连接
@@ -197,22 +197,22 @@ public class SqlHelper {
 
     /**
      * 功能：生成所有方法
-     *
+     * 如果使用lombok注解方式，则不需要生成get set方法
      * @param sb
      */
-//    private void processAllMethod(StringBuffer sb) {
-//
-//        for (int i = 0; i < colnames.length; i++) {
-//            sb.append("\tpublic void set" + initcap(colnames[i]) + "(" + sqlType2JavaType(colTypes[i]) + " "
-//                    + colnames[i] + "){\r\n");
-//            sb.append("\tthis." + colnames[i] + "=" + colnames[i] + ";\r\n");
-//            sb.append("\t}\r\n");
-//            sb.append("\tpublic " + sqlType2JavaType(colTypes[i]) + " get" + initcap(colnames[i]) + "(){\r\n");
-//            sb.append("\t\treturn " + colnames[i] + ";\r\n");
-//            sb.append("\t}\r\n");
-//        }
-//
-//    }
+    private void processAllMethod(StringBuffer sb) {
+
+        for (int i = 0; i < colnames.length; i++) {
+            sb.append("\tpublic void set" + initcap(colnames[i]) + "(" + sqlType2JavaType(colTypes[i]) + " "
+                    + colnames[i] + "){\r\n");
+            sb.append("\tthis." + colnames[i] + "=" + colnames[i] + ";\r\n");
+            sb.append("\t}\r\n");
+            sb.append("\tpublic " + sqlType2JavaType(colTypes[i]) + " get" + initcap(colnames[i]) + "(){\r\n");
+            sb.append("\t\treturn " + colnames[i] + ";\r\n");
+            sb.append("\t}\r\n");
+        }
+
+    }
 
     /**
      * 功能：将输入字符串的首字母改成大写
