@@ -31,5 +31,7 @@
 　　</root>-->
     <logger name="com.example" level="DEBUG">
         <appender-ref ref="baselog" />  
-    </logger>  
+    </logger>
+    <!--关闭某个包的日志,该包下的日志不打印-->
+    <logger name="com.zdd.api.service.content" level="OFF"></logger>
 </configuration>
