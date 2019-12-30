@@ -15,7 +15,7 @@ import javax.persistence.Id;
  * @Description: 
  */
 @Entity
-public class School {
+public class DogSchool {
 	@Id
 	private String schoolId;
 	private String schoolName;
@@ -31,6 +31,6 @@ public class School {
 	public void setSchoolName(String schoolName) {
 		this.schoolName = schoolName;
 	}
-
-
+	
+	
 }

@@ -1,11 +1,14 @@
 package com.testclass;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.example.domain.Dog;
-import com.example.domain.User;
+import com.example.domain.School;
+import com.example.domain.UserDog;
 import lombok.Data;
 import lombok.var;
 import org.apache.commons.lang.StringUtils;
+import org.springframework.beans.BeanUtils;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
@@ -21,27 +24,51 @@ public class Java8Tester {
     public static void main(String[] args) throws InvocationTargetException, IllegalAccessException {
         /**
          * spring BeanUtils.copyProperties("要转换的类","转换后的类")
-         * 前赋值后：user -> dog
+         * 前赋值后：UserDog  -> dog
          * https://www.cnblogs.com/lilala-world/p/10443597.html
          */
-        User user = new User();
+        UserDog user = new UserDog();
         user.setName("人");
         user.setAge("23");
+        List<String> list = new ArrayList<>();
+        list.add("a");
+        list.add("b");
+        list.add("c");
+        user.setList(list);
 
+        List<School> schools = new ArrayList<>();
+        School school = new School();
+        school.setSchoolId("1");
+        school.setSchoolName("北大");
+        schools.add(school);
+        School school1 = new School();
+        school1.setSchoolId("2");
+        school1.setSchoolName("清华");
+        schools.add(school1);
+        School school2 = new School();
+        school2.setSchoolId("3");
+        school2.setSchoolName("北航");
+        schools.add(school);
+        user.setSchools(schools);
+
+        List<School> sdc = new ArrayList<>();
         Dog dog = new Dog();
-        dog.setName("狗");
-        dog.setAge("2");
-//        BeanUtils.copyProperties(user,dog);
-//        System.out.println(JSONObject.toJSON(dog));
+//        dog.setName("狗");
+//        dog.setAge("2");
+        BeanUtils.copyProperties(user,dog);
+        System.out.println(JSONObject.toJSON(dog));
+
+//        BeanUtils.copyProperties(schools,sdc);
+//        System.out.println(JSONObject.toJSON(sdc));
 
         /**
          * apache BeanUtils.copyProperties("转换后的类","要转换的类")
-         * 后赋值前：dog -> user
+         * 后赋值前：dog -> UserDog
          * Spring与Apache中BeanUtils的区别
          * https://www.jianshu.com/p/581f831e0ffe
          */
-        org.apache.commons.beanutils.BeanUtils.copyProperties(user,dog);
-        System.out.println(user);
+//        org.apache.commons.beanutils.BeanUtils.copyProperties(dog,user);
+//        System.out.println(JSONObject.toJSON(dog));
     }
 }
 class Main{

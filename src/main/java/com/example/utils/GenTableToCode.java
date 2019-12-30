@@ -1,4 +1,4 @@
-package com.example.compressed;
+package com.example.utils;
 
 import java.io.File;
 import java.io.FileWriter;

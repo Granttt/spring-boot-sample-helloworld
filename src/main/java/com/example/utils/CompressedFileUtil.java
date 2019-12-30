@@ -1,4 +1,4 @@
-package com.example.compressed;
+package com.example.utils;
 
 import org.apache.tools.zip.ZipEntry;
 import org.apache.tools.zip.ZipOutputStream;

@@ -6,13 +6,15 @@ import java.util.List;
 
 /**
  * @Author: gxy
- * @CreateDate: 2019/12/23 20:13
+ * @CreateDate: 2019/12/28 10:58
  * @Description:
  */
 @Data
-public class Dog {
+public class UserDog {
+    private String id;
     private String name;
     private String age;
+
     private List<String> list;
 
     private List<School> schools;
