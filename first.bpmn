@@ -14,14 +14,14 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="澹ぇ澶＋澶уか" id="Shape-澹ぇ澶＋澶уか">
-        <dc:Bounds height="55.0" width="85.0" x="445.0" y="145.0"/>
+        <dc:Bounds height="55.0" width="85.0" x="455.0" y="160.0"/>
         <bpmndi:BPMNLabel>
           <dc:Bounds height="55.0" width="85.0" x="0.0" y="0.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge bpmnElement="_3" id="BPMNEdge__3" sourceElement="_2" targetElement="澹ぇ澶＋澶уか">
         <di:waypoint x="496.0" y="62.0"/>
-        <di:waypoint x="496.0" y="145.0"/>
+        <di:waypoint x="496.0" y="160.0"/>
         <bpmndi:BPMNLabel>
           <dc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
         </bpmndi:BPMNLabel>
