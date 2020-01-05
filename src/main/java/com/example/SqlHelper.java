@@ -21,6 +21,7 @@ public class SqlHelper {
     private String tablename = "act_period_ambry";// 表名
     private String[] colnames; // 列名数组
     private static String[] comments;  //列名注释,gxy自定义添加
+    private static String[] tableComments;  //表名注释,gxy自定义添加
     private String[] colTypes; // 列名类型数组
     private String version = "V0.01"; // 版本
     private int[] colSizes; // 列名大小数组
@@ -61,6 +62,7 @@ public class SqlHelper {
             colTypes = new String[size];
             colSizes = new int[size];
             comments = new String[size];//自定义添加
+            tableComments = new String[1];//自定义添加
             for (int i = 0; i < size; i++) {
 
                 colnames[i] = rsmd.getColumnName(i + 1);
@@ -85,11 +87,19 @@ public class SqlHelper {
             //数据库表结构sql
             String  showTableSql = "show full columns from " + tablename ;
             Statement stmt = (Statement) con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
-            ResultSet rs = stmt.executeQuery(sql);
             //获取表中字段注释
             getFieldComments(stmt , showTableSql);
+
+            //数据库表上的注释 方案一 ： https://blog.csdn.net/sinat_25712187/article/details/78971933
+//            String showTableAnnotation = "SHOW CREATE TABLE " + tablename ;
+            //数据库表上的注释 方案二
+            String showTableAnnotation = "SELECT TABLE_NAME,TABLE_COMMENT FROM information_schema.TABLES WHERE table_name = '" + tablename +"'";
+            //数据库表上的注释 方案三
+//            String showTableAnnotation = "show table status WHERE Name = '" + tablename +"'";
+            getFieldTableComments(stmt , showTableAnnotation);
+
             //gxy自定义添加 end
-            String content = parse(colnames, colTypes, colSizes);
+            String content = parse(tableComments,colnames, colTypes, colSizes);
 
             try {
                 File directory = new File("");
@@ -125,7 +135,7 @@ public class SqlHelper {
      * @param colSizes
      * @return
      */
-    private String parse(String[] colnames, String[] colTypes, int[] colSizes) {
+    private String parse(String[] tableComments,String[] colnames, String[] colTypes, int[] colSizes) {
         StringBuffer sb = new StringBuffer();
         // 生成package包路径
         sb.append("package " + this.packageOutPath + ";\r\n");
@@ -150,7 +160,12 @@ public class SqlHelper {
         sb.append(" * @文件名称：" + initcap(underlineToHump(this.tablename)) + ".java\r\n");
         sb.append(" * @创建时间：" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()) + "\r\n");
         sb.append(" * @创  建  人：" + this.authorName + " \r\n");
-        sb.append(" * @文件描述：" + tablename + " 实体类\r\n");
+        if (tableComments != null && tableComments.length > 0){
+
+            sb.append(" * @文件描述：" + tableComments[0] +"实体类\r\n");
+        }else {
+            sb.append(" * @文件描述：" + tablename +" 实体类\r\n");
+        }
         sb.append(" * @文件版本：" + this.version + " \r\n");
         sb.append(" */");
         sb.append("\r@Data");
@@ -177,6 +192,31 @@ public class SqlHelper {
             while (rs.next()) {
                 comments[i]  = rs.getString("Comment");
                 i ++;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    /**
+     * 获取表上的注释
+     */
+    private static void getFieldTableComments(Statement stat , String sql) {
+        try {
+            ResultSet rs = stat.executeQuery(sql);
+            int i = 0;
+            //方案一
+//            while (rs.next()) {
+//                String createDDL = rs.getString(2);
+//                String comment = parse(createDDL);
+//                tableComments[i]  = comment;
+//                i ++;
+//            }
+
+            if (rs != null && rs.next()) {
+                //方案二
+                tableComments[i]  = rs.getString("TABLE_COMMENT");
+                //方案三
+//                tableComments[i]  = rs.getString("Comment");
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -291,6 +331,23 @@ public class SqlHelper {
         return result.toString();
     }
 
+
+    /**
+     * 返回注释信息
+     * @param all
+     * @return
+     */
+    public static String parse(String all) {
+
+        String comment = null;
+        int index = all.indexOf("COMMENT='");
+        if (index < 0) {
+            return "";
+        }
+        comment = all.substring(index + 9);
+        comment = comment.substring(0, comment.length() - 1);
+        return comment;
+    }
 
     /**
      * 出口 TODO
