@@ -82,7 +82,6 @@ public class GenEntity {
 
     /**
      * 自动生成java类
-     * @param packageName
      */
     public static void autoCreateClass() {
         System.out.println("===========autoCreateClass  start==============");

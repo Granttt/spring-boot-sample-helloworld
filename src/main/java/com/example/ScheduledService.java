@@ -19,7 +19,6 @@ import java.text.SimpleDateFormat;
  * @version 1.0.0 
  * @Description: 使用Spring Task简单的定时任务
  */
-@Slf4j
 @Component
 public class ScheduledService {
 	

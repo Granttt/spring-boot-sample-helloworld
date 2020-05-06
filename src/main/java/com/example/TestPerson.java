@@ -52,5 +52,17 @@ public class TestPerson {
 
 		long c =1000000000L*3*10;
 		System.out.println(c);
+
+
+		String lisi = null;
+		if ("李四".equals(lisi)){
+			System.out.println("111111111111");
+		}
+		String str1="str1";
+		String str2="str2";
+		String str3="str3";
+		str1.concat(str2);
+		System.out.println(str1);
+		System.out.print(str3.concat(str1));    //str3str1
 	}
 }

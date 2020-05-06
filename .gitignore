@@ -4,6 +4,8 @@ target/
 !**/src/main/**
 !**/src/test/**
 
+log/
+
 ### STS ###
 .apt_generated
 .classpath
@@ -18,8 +20,6 @@ target/
 *.iws
 *.iml
 *.ipr
-*.bak
-rebel*
 
 ### NetBeans ###
 /nbproject/private/
@@ -31,8 +31,3 @@ build/
 
 ### VS Code ###
 .vscode/
-
-### log ###
-log/
-logs/daily/api.log.2019-12-07.gz
-/logs/

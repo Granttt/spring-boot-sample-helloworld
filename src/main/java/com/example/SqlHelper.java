@@ -1,5 +1,8 @@
 package com.example;
 
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang.StringUtils;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -14,6 +17,7 @@ import java.util.Date;
  * @Description:mysql 自动生产java 实体类脚本
  * https://blog.csdn.net/fst438060684/article/details/84339898
  */
+@Slf4j
 public class SqlHelper {
     //基本数据配置
     private String packageOutPath = "com.activities";// 指定实体生成所在包的路径
@@ -25,15 +29,18 @@ public class SqlHelper {
     private String[] colTypes; // 列名类型数组
     private String version = "V0.01"; // 版本
     private int[] colSizes; // 列名大小数组
-    private boolean f_util = true; // 是否需要导入包java.util.*
+    private boolean f_util = false; // 是否需要导入包java.util.*
     private boolean f_sql = false; // 是否需要导入包java.sql.*
     private boolean f_lang = false; // 是否需要导入包java.lang.*
     private boolean f_io = false; // 是否需要导入包java.io.Serializable
     private String defaultPath = "/src/main/java/";
     // 数据库连接
-    private static final String URL = "jdbc:mysql://101.254.136.114:13306/zdd_api?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false";
+    private static final String URL = "jdbc:mysql://localhost:3306/test1?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false";
     private static final String NAME = "root";
-    private static final String PASS = "Xlttidb@2019!";
+    private static final String PASS = "159357";
+//    private static final String URL = "jdbc:mysql://101.254.136.114:13306/zdd_api?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false";
+//    private static final String NAME = "root";
+//    private static final String PASS = "Xlttidb@2019!";
     private static final String DRIVER = "com.mysql.jdbc.Driver";
 
     /*
@@ -73,11 +80,14 @@ public class SqlHelper {
                  if (colTypes[i].equalsIgnoreCase("datetime")) {
                  f_util = true;
                  }
-                if (colTypes[i].equalsIgnoreCase("image") || colTypes[i].equalsIgnoreCase("text")
-                        || colTypes[i].equalsIgnoreCase("datetime") || colTypes[i].equalsIgnoreCase("time")
-                        || colTypes[i].equalsIgnoreCase("date") || colTypes[i].equalsIgnoreCase("datetime2")) {
+                if (colTypes[i].equalsIgnoreCase("image") || colTypes[i].equalsIgnoreCase("text")) {
                     f_sql = true;
                 }
+//                if (colTypes[i].equalsIgnoreCase("image") || colTypes[i].equalsIgnoreCase("text")
+//                        || colTypes[i].equalsIgnoreCase("datetime") || colTypes[i].equalsIgnoreCase("time")
+//                        || colTypes[i].equalsIgnoreCase("date") || colTypes[i].equalsIgnoreCase("datetime2")) {
+//                    f_sql = true;
+//                }
                 // if (colTypes[i].equalsIgnoreCase("int")) {
                 // f_lang = true;
                 // }
@@ -161,7 +171,6 @@ public class SqlHelper {
         sb.append(" * @创建时间：" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()) + "\r\n");
         sb.append(" * @创  建  人：" + this.authorName + " \r\n");
         if (tableComments != null && tableComments.length > 0){
-
             sb.append(" * @文件描述：" + tableComments[0] +"实体类\r\n");
         }else {
             sb.append(" * @文件描述：" + tablename +" 实体类\r\n");
@@ -179,7 +188,6 @@ public class SqlHelper {
 //        processAllMethod(sb);// get set方法
         sb.append("}\r\n");
 
-        // System.out.println(sb.toString());
         return sb.toString();
     }
     /**
@@ -230,7 +238,13 @@ public class SqlHelper {
     private void processAllAttrs(StringBuffer sb) {
 
         for (int i = 0; i < colnames.length; i++) {
-            sb.append("\tprivate " + sqlType2JavaType(colTypes[i]) + " " + this.underlineToHump(colnames[i]) + ";"+ "\t//" + comments[i]  + "\r\n");//gxy自定义添加
+            if (StringUtils.isNotBlank(comments[i])){
+                sb.append("\t/**\r\n");
+                sb.append("\t * " + comments[i] + "\r\n");
+                sb.append("\t */\r\n");
+            }
+            sb.append("\tprivate " + sqlType2JavaType(colTypes[i]) + " " + this.underlineToHump(colnames[i]) + ";" + "\r\n");//gxy自定义添加
+//            sb.append("\tprivate " + sqlType2JavaType(colTypes[i]) + " " + this.underlineToHump(colnames[i]) + ";"+ "\t//" + comments[i]  + "\r\n");//gxy自定义添加
         }
 
     }
@@ -355,8 +369,10 @@ public class SqlHelper {
      * @param args
      */
     public static void main(String[] args) {
-
-        new SqlHelper("system_setting");
+        log.debug("------------" + System.currentTimeMillis());
+        new SqlHelper("invitation");
+        System.out.println(System.currentTimeMillis());
+        log.debug("------------" + System.currentTimeMillis());
 
     }
 }

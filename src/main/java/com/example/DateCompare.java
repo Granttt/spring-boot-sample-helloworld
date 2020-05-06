@@ -21,6 +21,7 @@ public class DateCompare {
     public static void main(String[] args) throws ParseException {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         SimpleDateFormat ds = new SimpleDateFormat("yyyy-MM-dd ");
+        SimpleDateFormat dt = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
 
         String beginTime=new String("2017-06-09 10:22:22");
         String endTime=new String("2017-05-08 11:22:22");
@@ -59,6 +60,7 @@ public class DateCompare {
         System.out.println(df.format(DateUtils.addDays(new Date(),30)));
         System.out.println(df.format(DateUtils.addMonths(new Date(),1)));
         System.out.println(df.format(DateUtils.addYears(new Date(),-1)));
+        System.out.println(dt.format(new Date()));
     }
     /**
      * 获取当前时间,默认 24小时制 HH:mm:ss

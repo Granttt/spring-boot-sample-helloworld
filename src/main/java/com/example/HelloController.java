@@ -5,6 +5,7 @@ package com.example;
 import com.example.domain.School;
 
 import com.example.domain.Person;
+import com.example.domain.repository.OperLog;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,13 +38,15 @@ public class HelloController {
 	@Autowired
 	private BoyInfo boy;
 	
-	@RequestMapping("/")  
+	@RequestMapping("/")
+	@OperLog(operModul = "boot项目-第一个接口",operType = "FIRST",operDesc = "访问hello")
     public String helloworld(){  
 		logger.debug("访问hello");
         return "Hello world GXY!";  
     }  
 
-    @RequestMapping("/hello/{Name}")  
+    @RequestMapping("/hello/{Name}")
+	@OperLog(operModul = "boot项目-第二个接口",operType = "SECOND",operDesc = "带有参数")
     public String hellName(@PathVariable("Name") String myName){  
     	logger.debug("访问helloName,Name={}",myName);
         return "Hello "+myName;  
@@ -58,6 +61,7 @@ public class HelloController {
 	 * @return
 	 */
     @RequestMapping(value={"/hello","/hi"},method=RequestMethod.POST)
+	@OperLog(operModul = "boot项目-第三个接口",operType = "THIRD",operDesc = "多个url映射")
     public String gril(){
 //		return content;
 //		return cupSize+age;

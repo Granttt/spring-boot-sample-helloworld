@@ -4,8 +4,10 @@
 package com.example;
 
 import com.example.domain.Person;
+import com.example.domain.repository.OperLog;
 import com.example.mapper.HotelDtoMapper;
 import com.example.domain.repository.PersonRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,7 @@ import java.util.List;
  * @version 1.0.0 
  * @Description: 测试操作数据库
  */
+@Slf4j
 @RestController
 public class DataController {
 
@@ -59,12 +62,14 @@ public class DataController {
 		return personRepository.findByNameAndAddress(name, address);
 	}
 	@RequestMapping("/q3")
+	@OperLog(operModul = "boot项目-第五个个接口",operType = "FIVE",operDesc = "q3")
 	public List<Person> q3(String name,String address){
 		logger.debug("q3 开始");
 		logger.debug("q3接收参数name={},address={}",name,address);
 		return personRepository.withNameAndAddressQuery(name, address);
 	}
 	@RequestMapping("/q4")
+	@OperLog(operModul = "boot项目-第四个个接口",operType = "FOUR",operDesc = "q4")
 	public List<Person> q4(String name,String address){
 		logger.debug("q4 开始");
 		logger.debug("q4接收参数name={},address={}",name,address);

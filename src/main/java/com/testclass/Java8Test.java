@@ -82,6 +82,17 @@ class Main{
         sb.append("!");
 
         System.out.println(sb.toString());
+
+
+        List<String> strs = Arrays.asList("a", "a", "a", "a", "b");
+        boolean aa = strs.stream().anyMatch(str -> str.equals("a"));
+        boolean bb = strs.stream().allMatch(str -> str.equals("a"));
+        boolean cc = strs.stream().noneMatch(str -> str.equals("a"));
+        long count = strs.stream().filter(str -> str.equals("a")).count();
+        System.out.println(aa);// TRUE
+        System.out.println(bb);// FALSE
+        System.out.println(cc);// FALSE
+        System.out.println(count);// 4
     }
 
 }
@@ -151,6 +162,31 @@ class OptionalTest{
         String name = list.stream().map(p -> p.get("name")).collect(Collectors.joining(","));
         System.out.println(s);
         System.out.println(name);
+
+
+        /**
+         * 使用Java8的Stream对两个 List 遍历匹配数据的优化处理
+         * https://segmentfault.com/q/1010000011689711
+         */
+        List<String> list1 = new ArrayList<>();
+        list1.add("a");
+        list1.add("b");
+        list1.add("c");
+        list1.add("d");
+        List<String> list2 = new ArrayList<>();
+        list2.add("a");
+        list2.add("b");
+        list2.add("c");
+        list2.add("f");
+        Long count = 0L;
+        count = list1.stream()
+                .filter(string -> list2.stream().anyMatch(string2 -> string.equals(string2))).count();
+//                .forEach(string -> {
+//                    // to do sth
+//                    System.out.println("------");
+//                });
+        System.out.println(count);
+
     }
     public Integer sum(Optional<Integer> a, Optional<Integer> b){
         // Optional.isPresent - 判断值是否存在
