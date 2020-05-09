@@ -37,5 +37,17 @@ public class StreamTest {
 
         long count = schools.stream().filter(school3 -> school3.getSchoolId().equals("10")).count();
         System.out.println(count);
+
+        //返回特定的结果集合（limit/skip）：limit 返回 Stream 的前面 n 个元素；skip 则是扔掉前 n 个元素。
+        ArrayList<String> forEachLists = new ArrayList<>();
+        forEachLists.add("a");
+        forEachLists.add("b");
+        forEachLists.add("c");
+        forEachLists.add("d");
+        forEachLists.add("e");
+        forEachLists.add("f");
+        List<String> collect = forEachLists.stream().skip(2).limit(3).collect(Collectors.toList());
+        System.out.println(JSON.toJSONString(collect));
+        String json = "{\"name\":\"FLY\",\"age\": 25}";
     }
 }

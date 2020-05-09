@@ -30,9 +30,6 @@ public class DateDayTest {
      */
     public static int daysBetween(Date smdate, Date bdate) throws ParseException
     {
-        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        smdate=sdf.parse(sdf.format(smdate));
-        bdate=sdf.parse(sdf.format(bdate));
         Calendar cal = Calendar.getInstance();
         cal.setTime(smdate);
         long time1 = cal.getTimeInMillis();

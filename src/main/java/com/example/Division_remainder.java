@@ -5,6 +5,7 @@ package com.example;
  * @CreateDate: 2019/11/28 20:53
  * @Description:Java中的相除（/）和取余（%）
  * https://blog.csdn.net/sinat_41152339/article/details/81054379
+ * http://www.manongjc.com/detail/8-phhlylhextcizdm.html
  */
 public class Division_remainder {
     public static void main(String[] args) {
