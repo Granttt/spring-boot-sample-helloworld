@@ -35,6 +35,9 @@ public class CommonRedisHelperTest {
 
                 if (redisHelper.lock(key)){
                     // 执行逻辑操作
+
+                    //此处为业务代码
+
                     redisHelper.delete(key);
                 }else{
                     failCount ++;

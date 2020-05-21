@@ -260,6 +260,12 @@ class testCollectingAndThen{
 
         //start,end分别是第几个到第几个。
         System.out.println(students.subList(1,3));
+        String a =null;
+        String b = null;
+        //不会空指针
+        System.out.println(a+","+b);
+        //NullPointerException
+        System.out.println(a.concat(b));
     }
     /**
      * 分支合并
