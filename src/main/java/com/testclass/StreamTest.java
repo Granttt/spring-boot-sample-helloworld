@@ -261,6 +261,8 @@ class testCollectingAndThen{
         //start,end分别是第几个到第几个。
         System.out.println(students.subList(1,3));
     }
-    
-    
+    /**
+     * 分支合并
+     * https://www.cnblogs.com/sxdcgaq8080/p/9293954.html
+     */
 }
