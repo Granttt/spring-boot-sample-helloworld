@@ -1,12 +1,17 @@
-package com.example.utils;
+package com.example.utils.redis;
 
+import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.script.DefaultRedisScript;
 import org.springframework.data.redis.core.script.RedisScript;
 import org.springframework.stereotype.Component;
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisCluster;
 
 import javax.annotation.Resource;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * @Author: gaoxi
@@ -14,7 +19,8 @@ import java.util.Collections;
  * @Description:springboot的RedisTemplate实现分布式锁
  * https://blog.csdn.net/long2010110/article/details/82911168
  * https://blog.csdn.net/qq_28397259/article/details/80839072
- * https://blog.csdn.net/weixin_33795806/article/details/92623519
+ *
+ * 原作者代码有点问题，修改一下
  */
 @Component
 public class CommonRedisHelperTwo {
@@ -44,6 +50,35 @@ public class CommonRedisHelperTwo {
 
         }catch(Exception e){
 
+        }
+        return ret;
+    }
+    /**
+     * 获取锁 支持单机和cluster模式
+     * @param lockKey
+     * @param value
+     * @param expireTime：单位-秒
+     * @return
+     */
+    public static boolean getLockCluster(String lockKey, String value, int expireTime){
+        boolean ret = false;
+        try{
+            String script = "if redis.call('setNx',KEYS[1],ARGV[1]) == 1 then if redis.call('get',KEYS[1])==ARGV[1] then return redis.call('expire',KEYS[1],ARGV[2]) else return 0 end end";
+            List<String> args = Arrays.asList(value,String.valueOf(expireTime));
+            Long result = (Long)redisTemplate.execute((RedisCallback<Long>) connection -> {
+                Object nativeConnection = connection.getNativeConnection();
+                if (nativeConnection instanceof JedisCluster) {
+                    return (Long) ((JedisCluster) nativeConnection).eval(script, Collections.singletonList(lockKey), args);
+                } else if (nativeConnection instanceof Jedis) {
+                    return (Long) ((Jedis) nativeConnection).eval(script, Collections.singletonList(lockKey), args);
+                }
+                return null;
+            });
+            if(SUCCESS.equals(result)){
+                return true;
+            }
+        }catch(Exception e){
+            e.printStackTrace();
         }
         return ret;
     }

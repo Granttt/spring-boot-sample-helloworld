@@ -20,7 +20,6 @@ import javax.sql.DataSource;
 @SpringBootApplication
 @Import({DynamicDataSourceRegister.class})//注册动态多数据源
 @MapperScan({"com.example.mapper"}) //@MapperScan({"com.kfit.demo","com.kfit.user"})
-//@ComponentScan(value="com.thread")
 @ComponentScan(value="com") //扫描整个父类包
 @EnableCaching
 public class SpringBootSampleHelloworldApplication {

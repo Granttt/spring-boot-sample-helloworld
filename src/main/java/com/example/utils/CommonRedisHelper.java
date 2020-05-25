@@ -11,6 +11,7 @@ import java.util.Objects;
  * @Author: gaoxi
  * @CreateDate: 2019/11/1 19:34
  * @Description:
+ * https://blog.csdn.net/weixin_33795806/article/details/92623519
  */
 @Component
 public class CommonRedisHelper {

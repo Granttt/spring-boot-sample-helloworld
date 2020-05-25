@@ -2,6 +2,7 @@ package com.example;
 
 import com.example.domain.UserAnnotation;
 import com.example.domain.repository.UserAnnotationFactory;
+import org.hibernate.dialect.Ingres9Dialect;
 
 /**
  * @Description: java类作用描述
@@ -18,5 +19,10 @@ public class AnnotationTest {
         UserAnnotation user = UserAnnotationFactory.creat();
         System.out.println(user.getName());
         System.out.println(user.getAge());
+        int num = 0;
+        for (int i = 0; i < 10; i++){
+            num = 1^num;
+            System.out.println(num);
+        }
     }
 }
