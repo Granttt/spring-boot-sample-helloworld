@@ -48,4 +48,8 @@ public class JsonRootBean {
     private String title;
     private String use_quan;
     private String video_score_today;
+    /**
+     * 新增字段，
+     */
+    private String newString;
 }
