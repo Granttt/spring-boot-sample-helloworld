@@ -25,12 +25,12 @@ public class JsonRootBean {
     private Date coupon_end_time;
     private String coupon_id;
     private String coupon_start_free;
-    private Date coupon_start_time;
+    private Date coupon_start_timee;
     private String cover_uri;
     private String d_pic;
     private String d_title;
     private String dtk_sample_id;
-    private String dtk_video_id;
+    private String dtk_video_idd;
     private String dx_commission;
     private String goods_score_today;
     private String goodsid;
@@ -42,7 +42,7 @@ public class JsonRootBean {
     private String platform;
     private String price;
     private int quanhou;
-    private String sales_today;
+    private String sales_todayy;
     private String seller_id;
     private String team_link;
     private String title;
