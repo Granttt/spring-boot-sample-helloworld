@@ -240,6 +240,13 @@
 			<version>1.0.0.RC4</version>
 		</dependency>
 
+		<!--https://blog.csdn.net/king_kgh/article/details/80804078-->
+		<dependency>
+			<groupId>io.vertx</groupId>
+			<artifactId>vertx-core</artifactId>
+			<version>3.5.2</version>
+		</dependency>
+
 	</dependencies>
 	
 
