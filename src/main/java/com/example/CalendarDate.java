@@ -2,9 +2,7 @@ package com.example;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.TimeZone;
+import java.util.*;
 
 /**
  * @Author: gxy
@@ -44,7 +42,27 @@ public class CalendarDate {
 //
 //        System.out.println("zdd".equals("zdd"));
 
-        nowToMonth();
+//        System.out.println("距离月底还有："+nowToMonth()+"天");
+//        getTest();
+//        getMonth();
+
+        //初始化当前时间
+//        Calendar calendar = Calendar.getInstance();
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DAY_OF_YEAR, -1);
+
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        Date begin = calendar.getTime();
+
+        calendar.set(Calendar.HOUR_OF_DAY, 23);
+        calendar.set(Calendar.MINUTE, 59);
+        calendar.set(Calendar.SECOND, 59);
+        Date end = calendar.getTime();
+        System.out.println(begin);
+        System.out.println(end);
+
     }
     /**
      * 获取当前时间或指定时间离一天结束剩余秒数
@@ -172,14 +190,59 @@ public class CalendarDate {
     /**
      * 当前时间距月底还有几天
      * @return
+     * getActualMaximum函数，主要是用于获取一个指定日期的当月总天数
      */
     public static Integer nowToMonth(){
         Calendar c = Calendar.getInstance();
         int d = c.getActualMaximum(Calendar.DAY_OF_MONTH);
         int now = c.get(Calendar.DAY_OF_MONTH);
-        System.out.println(d);
+        System.out.println("本月月底是："+d+"号");
         System.out.println(now);
 
         return d -now;
     }
+    public static void getTest(){
+        Calendar calendar=Calendar.getInstance();
+        calendar.setTime(new Date());
+        /*获取今天的日期*/
+        System.out.println("今天的日期是："+calendar.get(Calendar.DAY_OF_MONTH));
+        /*获取十天之后的日期*/
+//        calendar.clear();//避免继承当前系统的时间时间从1970-01-01开始，不清除则继承当前系统时间
+        calendar.set(Calendar.DAY_OF_MONTH, calendar.get(Calendar.DAY_OF_MONTH)+2);
+        System.out.println("十天之后的日期是："+calendar.get(Calendar.DAY_OF_MONTH));
+    }
+
+    public static String getMonth(){
+        Calendar cale = Calendar.getInstance();
+//        Integer month=cale.get(Calendar.MONTH)+1;
+//        System.out.println(month);
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String demo = datechange(cale.getTime(), "yyyy_MM");
+        System.out.println(demo);
+        return null;
+    }
+    /**
+     * 自定义日期格式化
+     */
+    public static String datechange(Date date, String pattern) {
+        SimpleDateFormat sdf = new SimpleDateFormat(pattern);
+        String demo = sdf.format(date);
+        return demo;
+    }
+    /**
+     * cal1.add(Calendar.DAY_OF_MONTH,1);
+     * cal1.add(Calendar.DAY_OF_YEAR,1);
+     * cal1.add(Calendar.DATE,1);
+     *
+     *
+     * 就单纯的add操作结果都一样，因为都是将日期+1
+     * 就没有区别说是在月的日期中加1还是年的日期中加1
+     * 但是Calendar设置DAY_OF_MONTH和DAY_OF_YEAR的目的不是用来+1
+     * 将日期加1，这通过cal1.add(Calendar.DATE,1)就可以实现
+     * DAY_OF_MONTH的主要作用是cal.get(DAY_OF_MONTH)，用来获得这一天在是这个月的第多少天
+     * Calendar.DAY_OF_YEAR的主要作用是cal.get(DAY_OF_YEAR)，用来获得这一天在是这个年的第多少天。
+     * 同样，还有DAY_OF_WEEK，用来获得当前日期是一周的第几天
+     *
+     * https://blog.csdn.net/ruoxiyun/article/details/102840503
+     */
 }

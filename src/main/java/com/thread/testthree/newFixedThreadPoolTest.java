@@ -9,6 +9,11 @@ import java.util.concurrent.Executors;
  */
 public class newFixedThreadPoolTest {
     public static void main(String[] args) {
+
+        //处理器核心数
+        int i1 = Runtime.getRuntime().availableProcessors();
+        System.out.println(i1);
+
         ExecutorService  fixedThreadPool = Executors.newFixedThreadPool(3);
 
         for (int i = 0; i < 10; i++) {
@@ -31,4 +36,33 @@ public class newFixedThreadPoolTest {
         }
         fixedThreadPool.shutdown();
     }
+
+
+//                            if (titles.length == 11){
+//        rows.createCell(1).setCellValue(result.get(j).getSecondOrgName());
+//        rows.createCell(2).setCellValue(result.get(j).getThirdOrgName());
+//        rows.createCell(3).setCellValue(result.get(j).getFourthOrgName());
+//        rows.createCell(4).setCellValue(result.get(j).getFifthOrgName());
+//    }
+//                        else if (titles.length==10){
+//        rows.createCell(1).setCellValue(result.get(j).getSecondOrgName());
+//        rows.createCell(2).setCellValue(result.get(j).getThirdOrgName());
+//        rows.createCell(3).setCellValue(result.get(j).getFourthOrgName());
+//    }
+//                        else if (titles.length==9){
+//        rows.createCell(1).setCellValue(result.get(j).getSecondOrgName());
+//        rows.createCell(2).setCellValue(result.get(j).getThirdOrgName());
+//    }
+//                        else if (titles.length==8){
+//        rows.createCell(1).setCellValue(result.get(j).getSecondOrgName());
+//    }
+//                        else if (titles.length == 12){
+//        rows.createCell(1).setCellValue(result.get(j).getSecondOrgName());
+//        rows.createCell(2).setCellValue(result.get(j).getThirdOrgName());
+//        rows.createCell(3).setCellValue(result.get(j).getFourthOrgName());
+//        rows.createCell(4).setCellValue(result.get(j).getFifthOrgName());
+//        rows.createCell(5).setCellValue(result.get(j).getSalesName());
+//    }
+
+
 }
