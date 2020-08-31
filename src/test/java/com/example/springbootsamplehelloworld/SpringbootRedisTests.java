@@ -122,7 +122,8 @@ public class SpringbootRedisTests {
         List<Person> list = getPersonList();
         //清空
         while (redisTemplate.opsForList().size("oowwoo") > 0){
-            redisTemplate.opsForList().leftPop("oowwoo");
+            //leftPop 移除集合中的左边第一个元素。并返回被移除元素的值
+            Person person = (Person) redisTemplate.opsForList().leftPop("oowwoo");
         }
         //存储
         redisTemplate.opsForList().rightPushAll("oowwoo", list);

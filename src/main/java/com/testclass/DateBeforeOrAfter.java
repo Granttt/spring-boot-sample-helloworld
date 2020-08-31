@@ -22,7 +22,7 @@ public class DateBeforeOrAfter {
          *   除非对这两个函数足够了解 否则还是使用getTime()来进行时间的比较才更清晰明了
          */
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        Date d1 = sdf.parse("2019-5-27 12:58:21");
+        Date d1 = sdf.parse("2019-5-28 12:58:21");
         Date d2 = sdf.parse("2019-5-28 12:58:21");
         System.out.println("d1=d2时,before函数:"+d1.before(d2));
         System.out.println("d1=d2时,after函数:"+d1.after(d2));

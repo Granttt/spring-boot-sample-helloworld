@@ -63,6 +63,8 @@ public class CalendarDate {
         System.out.println(begin);
         System.out.println(end);
 
+        addMinute(15);
+
     }
     /**
      * 获取当前时间或指定时间离一天结束剩余秒数
@@ -229,6 +231,24 @@ public class CalendarDate {
         String demo = sdf.format(date);
         return demo;
     }
+
+    /**
+     * 将时间加10分钟的方法
+     */
+    public static String addMinute(int minute) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Calendar nowTime = Calendar.getInstance();
+        nowTime.add(Calendar.MINUTE, minute);
+        System.out.println(sdf.format(nowTime.getTime()));
+
+        //方法一：
+        Date now = new Date();
+        Date afterDate = new Date(now.getTime() + 600000);
+        System.out.println(sdf.format(afterDate ));
+
+        return sdf.format(nowTime.getTime());
+    }
+
     /**
      * cal1.add(Calendar.DAY_OF_MONTH,1);
      * cal1.add(Calendar.DAY_OF_YEAR,1);

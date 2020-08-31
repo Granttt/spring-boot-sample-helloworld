@@ -107,7 +107,7 @@ public class RedisListTest {
         while (iterator.hasNext()){
             System.out.println(iterator.next());
         }
-        //按照从大到小 使用 reverse前缀
+        //按照从大到小 使用 reverse前缀 reverseRangeByScoreWithScores 倒序排序获取RedisZSetCommands.Tuples的分值区间值。
         Set set1 = redisTemplate.opsForZSet().reverseRangeByScoreWithScores(key, 1, 100, 0, 3);
         Iterator<ZSetOperations.TypedTuple<Object>>  iterator1 = set1.iterator();
         while (iterator1.hasNext()) {

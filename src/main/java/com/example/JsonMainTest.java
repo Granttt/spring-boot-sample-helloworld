@@ -52,7 +52,10 @@ public class JsonMainTest {
         goods.add(out3);
         System.out.println(JSON.toJSONString(goods));
 
-
+        //aa为int类型，%07d: 0代表前面要补的字符 2代表字符串总长度,d表示参数为整数类型
+        int aa = 1223;
+        String s=String.format("%07d", aa);
+        System.out.println(s);
     }
 @Data
 static class TaskProductOut {

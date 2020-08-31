@@ -1,5 +1,11 @@
 package com.testclass;
 
+import com.alibaba.fastjson.JSON;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 /**
  * @Description: java类作用描述
  * @Author: gaoxi
@@ -25,6 +31,17 @@ public class testclass {
         ObjectClass object= new ObjectClass(str);
         changeObject(object);
         System.out.println("ObjectVale:"+object.value);
+
+        List<Long> salesmanIds = new ArrayList<>();
+        salesmanIds.add(1L);
+        salesmanIds.add(11L);
+        salesmanIds.add(111L);
+        salesmanIds.add(112L);
+        salesmanIds.add(121L);
+        List<Long> salesmanIds1 = new ArrayList<>();
+        salesmanIds1.add(12L);
+        List<Long> collect = salesmanIds.stream().filter(aLong -> salesmanIds1.contains(aLong)).collect(Collectors.toList());
+        System.out.println(JSON.toJSONString(collect));
     }
 }
 class ObjectClass{
