@@ -26,7 +26,7 @@ public class CompressedFileUtil {
 
     /**
      * @desc 将源文件/文件夹生成指定格式的压缩文件,格式zip
-     * @param resourePath 源文件/文件夹
+     * @param resourcesPath 源文件/文件夹
      * @param targetPath  目的压缩文件保存路径
      * @return void
      * @throws Exception

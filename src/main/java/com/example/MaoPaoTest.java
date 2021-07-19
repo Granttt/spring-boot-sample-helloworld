@@ -24,3 +24,12 @@ public class MaoPaoTest {
         System.out.println(Arrays.toString(arr));//循环输出排序后的数
     }
 }
+class IntegerTest{
+    public static void main(String[] args) {
+        System.out.println("最大取值：" + Integer.MAX_VALUE);
+        System.out.println("最小取值：" + Integer.MIN_VALUE);
+        Long a = Long.valueOf(1000);
+        System.out.println(a.intValue());
+
+    }
+}

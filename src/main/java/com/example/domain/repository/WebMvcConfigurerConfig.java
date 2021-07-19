@@ -16,6 +16,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * 映射到对应的目录META-INF/resources/下面。我们加上这个映射即可
  * https://www.jianshu.com/p/840320d431a1
  * 想要启用MVC Java config，只需要将@EnableWebMvc添加到你的一个@Configuration class即可
+ * https://blog.csdn.net/ysk_xh_521/article/details/80633141
  */
 @Configuration
 @EnableWebMvc

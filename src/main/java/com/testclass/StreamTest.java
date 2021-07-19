@@ -150,82 +150,6 @@ public class StreamTest {
         Stream.of("AAA","BBB","CCC").parallel().forEach(s->System.out.println("forEach Output:"+s));
         Stream.of("AAA","BBB","CCC").parallel().forEachOrdered(s->System.out.println("forEachOrdered Output:"+s));
 
-        // 只查末级营业部地图坐标
-//        for (OrganizationOut org : professionIds) {
-//            EchartsRankOut.Coordinate coordinate = new EchartsRankOut.Coordinate();
-//            coordinate.setOrganizationId(org.getOrganizationId());
-//            coordinate.setTitle(org.getOrganizationName());
-//            coordinate.setPoint(org.getLongitude() +","+ org.getLatitude());
-//            coordinate.setEquipnum((null != map3.get(org.getOrganizationId())) ? Math.toIntExact(map3.get(org.getOrganizationId())) : 0);
-//            coordinate.setInvitation((null != map1.get(org.getOrganizationId())) ? map1.get(org.getOrganizationId()) : 0L);
-//            coordinate.setTesting(null != map2.get(org.getOrganizationId()) ? map2.get(org.getOrganizationId()) : 0L);
-//            coordinates.add(coordinate);
-//        }
-
-
-        //地图只显示当前机构的下级机构，非末级
-//        for (OrganizationOut org : organizationOuts) {
-//            Long countInv = 0L;//邀约数
-//            Long countMed = 0L;//体检数
-//            Integer countSn = 0;//设备数
-//            if (org.getHasChild()){
-//                OrganizationIn organizationIn1 = new OrganizationIn();
-//                organizationIn1.setOrganizationId(org.getOrganizationId());
-//                NormalResp<List<OrganizationOut>> organizationChild1 = organizationService.getOrganizationChild(organizationIn1);
-//                //筛选下级所有子机构
-//                List<Long> professionIds1 = organizationChild1.getData().stream().map(OrganizationOut::getOrganizationId).collect(Collectors.toList());
-//
-//                for (Long aLong : professionIds1) {
-//                    if (map1.get(aLong) != null){
-//                        countInv += map1.get(aLong);
-//                    }
-//                    if (map2.get(aLong) != null){
-//                        countMed += map2.get(aLong);
-//                    }
-//                    if (map3.get(aLong) != null){
-//                        countSn +=  Math.toIntExact(map3.get(aLong));
-//                    }
-//                }
-//            }else {
-//                countInv = ((null != map1.get(org.getOrganizationId())) ? map1.get(org.getOrganizationId()) : 0L);
-//                countMed = ((null != map2.get(org.getOrganizationId())) ? map2.get(org.getOrganizationId()) : 0L);
-//                countSn =  ((null != map3.get(org.getOrganizationId())) ?  Math.toIntExact(map3.get(org.getOrganizationId())) : 0);
-//            }
-//            EchartsRankOut.Coordinate coordinate = new EchartsRankOut.Coordinate();
-//            coordinate.setOrganizationId(org.getOrganizationId());
-//            coordinate.setTitle(org.getOrganizationName());
-//            coordinate.setPoint(org.getLongitude() + "," + org.getLatitude());
-//            coordinate.setEquipnum(countSn);
-//            coordinate.setInvitation(countInv);
-//            coordinate.setTesting(countMed);
-//            coordinate.setHasChild(org.getHasChild());
-//            coordinates.add(coordinate);
-//        }
-
-
-//        final Map<Long, Long> map3 = new HashMap<>();
-//        Map<Long, Integer> map4 = new HashMap<>();
-//        if (!CollectionUtils.isEmpty(record1)) {
-//            Map<Long, List<EchartsMedicalRecord>> deviceMap = record1.stream().collect(Collectors.groupingBy(EchartsMedicalRecord::getOrganizationId));
-//            //设备sn号去重
-//            //方式一：
-//            List<EchartsMedicalRecord> record2 = new ArrayList<>();
-//            for (Map.Entry<Long, List<EchartsMedicalRecord>> value : deviceMap.entrySet()) {
-//                int a = value.getValue().stream().collect(Collectors.collectingAndThen(Collectors.toCollection(()
-//                        -> new TreeSet<>(Comparator.comparing(EchartsMedicalRecord::getDeviceSn))), ArrayList::new)).size();
-//                map4.put(value.getKey(),a);
-//            }
-//
-//            //方式二:
-//            deviceMap.entrySet().stream().forEachOrdered(e -> {
-//                Long count = 0L;
-//                count = Long.valueOf(e.getValue().stream().collect(Collectors.collectingAndThen(Collectors.toCollection(()
-//                        -> new TreeSet<>(Comparator.comparing(EchartsMedicalRecord::getDeviceSn))), ArrayList::new)).size());
-//                map3.put(e.getKey(),count);
-//            });
-//
-//        }
-
     }
 }
 
@@ -282,4 +206,47 @@ class testCollectingAndThen{
      * 分支合并
      * https://www.cnblogs.com/sxdcgaq8080/p/9293954.html
      */
+}
+
+/**
+ * java8 Stream分页
+ */
+class StreamPageTest{
+    public static void main(String[] args) {
+        List<Student> students = Arrays.asList(
+                new Student(1,"zhangsan","class1",18,60,"2020-05-16"),
+                new Student(2,"lisi","class1",18,59,"2020-05-16"),
+                new Student(3,"lisi","class1",18,100,"2020-05-16"),
+                new Student(4,"wangwu","class2",18,100,"2020-05-16"),
+                new Student(5,"wangwu","class2",18,100,"2020-05-17"),
+                new Student(6,"wangwu","class2",18,91,"2020-05-16"),
+                new Student(7,"wangwu","class2",18,92,"2020-05-16"),
+                new Student(8,"wangwu","class22",18,93,"2020-05-16"),
+                new Student(9,"wangwu","class2",18,94,"2020-05-16"),
+                new Student(10,"wangwu","class2",18,88,"2020-05-16"),
+                new Student(11,"wangwu","class4",18,96,"2020-05-16"),
+                new Student(12,"wangwu","class2",18,90,"2020-05-16"),
+                new Student(13,"zhaoliu","class2",18,98,"2020-05-16"),
+                new Student(14,"zhaoliu","class2",18,99,"2020-05-16"),
+                new Student(15,"zhaoliu","class2",18,80,"2020-05-16"));
+
+        Integer pageNum=2;
+        Integer pageSize=4;
+        filterByPage(students,pageNum,pageSize);
+    }
+
+    /**
+     * 分页方法
+     * https://blog.csdn.net/acdhkf/article/details/102928885
+     * @param list 数据集合
+     * @param pageNum 页码
+     * @param pageSize 条数
+     * @return
+     */
+    public static List filterByPage(List list, Integer pageNum, Integer pageSize){
+        Object collect = list.stream().skip((pageNum - 1) * pageSize).limit(pageSize).collect(Collectors.toList());
+        System.out.println(JSON.toJSONString(collect));
+        return (List) collect;
+    }
+
 }

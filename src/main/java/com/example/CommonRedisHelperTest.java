@@ -1,6 +1,6 @@
 package com.example;
 
-import com.example.utils.CommonRedisHelper;
+import com.example.utils.redis.CommonRedisHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

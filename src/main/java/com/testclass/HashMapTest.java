@@ -39,5 +39,17 @@ public class HashMapTest {
         n.put("c", "哈哈");
         map.putAll(n);
         System.out.println(JSON.toJSONString(map));
+
+
+        HashMap<String,String> hashMap = new HashMap<>();
+        addMap(hashMap);
+        System.out.println(JSON.toJSONString(hashMap));
     }
+
+    public static void addMap(HashMap<String,String> map){
+        map.put("aaa", "haha");
+        map.put("bbb", "haha");
+        map.put("ccc", "haha");
+    }
+
 }

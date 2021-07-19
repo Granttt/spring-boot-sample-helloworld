@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.web.client.RestTemplate;
 
 import javax.sql.DataSource;
 
@@ -25,6 +26,13 @@ import javax.sql.DataSource;
 public class SpringBootSampleHelloworldApplication {
 	
 	protected static Logger logger=LoggerFactory.getLogger(SpringBootSampleHelloworldApplication.class);
+
+	@Bean
+	public RestTemplate restTemplate(){
+	    return  new RestTemplate();
+    }
+
+
 	/*
 	如果不启用多数据源，则无需以下配置，仍然在application.properties中配置mybatis.mapper-locations即可生效
 	如果配置了多数据源，但sql采用注解的方式，也无需以下配置。sql注解的方式包括：@Select， @Insert等。只要在类上添加@Mapper注解即可，容器加载会识别为mapper对象

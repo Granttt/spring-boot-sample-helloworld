@@ -32,15 +32,16 @@ public class SqlHelper {
     private boolean f_util = false; // 是否需要导入包java.util.*
     private boolean f_sql = false; // 是否需要导入包java.sql.*
     private boolean f_lang = false; // 是否需要导入包java.lang.*
-    private boolean f_io = false; // 是否需要导入包java.io.Serializable
+    private boolean f_io = true; // 是否需要导入包java.io.Serializable
+    private boolean f_lom = false; // 是否需要导入包lombok.Data
     private String defaultPath = "/src/main/java/";
     // 数据库连接
 //    private static final String URL = "jdbc:mysql://localhost:3306/test1?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false";
 //    private static final String NAME = "root";
 //    private static final String PASS = "159357";
-    private static final String URL = "jdbc:mysql://10.0.10.230:3306/gift_db?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false";
-    private static final String NAME = "zdd_admin";
-    private static final String PASS = "Xlt@2019";
+    private static final String URL = "jdbc:mysql://192.168.10.202:3306/jy_crm?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false";
+    private static final String NAME = "root";
+    private static final String PASS = "juyoufuli";
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 
     /*
@@ -162,7 +163,9 @@ public class SqlHelper {
         if (f_io) {
             sb.append("import java.io.Serializable;\r\n");
         }
-        sb.append("import lombok.Data;\r\n");
+        if (f_lom){
+            sb.append("import lombok.Data;\r\n");
+        }
 
         sb.append("\r\n");
         // 注释部分
@@ -177,7 +180,9 @@ public class SqlHelper {
         }
         sb.append(" * @文件版本：" + this.version + " \r\n");
         sb.append(" */");
-        sb.append("\r@Data");
+        if (f_lom){
+            sb.append("\r@Data");
+        }
         // 实体部分
         sb.append("\npublic class " + initcap(underlineToHump(tablename)));
         if (f_io) {
@@ -185,7 +190,9 @@ public class SqlHelper {
         }
         sb.append( "{\r\n");
         processAllAttrs(sb);// 属性
-//        processAllMethod(sb);// get set方法
+        if (!f_lom){
+            processAllMethod(sb);// get set方法
+        }
         sb.append("}\r\n");
 
         return sb.toString();
@@ -257,12 +264,14 @@ public class SqlHelper {
     private void processAllMethod(StringBuffer sb) {
 
         for (int i = 0; i < colnames.length; i++) {
-            sb.append("\tpublic void set" + initcap(colnames[i]) + "(" + sqlType2JavaType(colTypes[i]) + " "
-                    + colnames[i] + "){\r\n");
-            sb.append("\tthis." + colnames[i] + "=" + colnames[i] + ";\r\n");
+            //属性下划线转驼峰后的string
+            String s = this.underlineToHump(colnames[i]);
+            sb.append("\tpublic void set" + initcap(s) + "(" + sqlType2JavaType(colTypes[i]) + " "
+                    + s + "){\r\n");
+            sb.append("\tthis." + s + " = " + s + ";\r\n");
             sb.append("\t}\r\n");
-            sb.append("\tpublic " + sqlType2JavaType(colTypes[i]) + " get" + initcap(colnames[i]) + "(){\r\n");
-            sb.append("\t\treturn " + colnames[i] + ";\r\n");
+            sb.append("\tpublic " + sqlType2JavaType(colTypes[i]) + " get" + initcap(s) + "(){\r\n");
+            sb.append("\t\treturn " + s + ";\r\n");
             sb.append("\t}\r\n");
         }
 
@@ -370,7 +379,8 @@ public class SqlHelper {
      */
     public static void main(String[] args) {
         log.debug("------------" + System.currentTimeMillis());
-        new SqlHelper("o_order_invoice");
+        //要生成的表
+        new SqlHelper("crm_invoice_re_order_info");
         System.out.println(System.currentTimeMillis());
         log.debug("------------" + System.currentTimeMillis());
 
